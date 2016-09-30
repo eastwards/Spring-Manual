@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="static/codemirror.css" />
+    <link rel="stylesheet" href="static/style.css" />
+    <link id="theme-link" rel="stylesheet" href="static/purple.css" />
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- themes-list -->
+    <div class="themes-list">
+        <h3 class="invisible">切换主题</h3>
+        <ul>
+            <li class="on"><a href="javascript:void(0)" class="purple">purple</a></li>
+            <li class=""><a href="javascript:void(0)" class="blue">blue</a></li>
+            <li class=""><a href="javascript:void(0)" class="dark">dark</a></li>
+            <li class=""><a href="javascript:void(0)" class="orange">orange</a></li>
+        </ul>
+    </div>
+    <!-- end themes-list -->
+
+    <!-- sidebar -->
+    <div id="sidebar">
+        <div class="nav">
+            <h1 style="text-align: center;">Spring手册</h1>
+        </div>
+        <div class="sidebar-list">
+            <div id="result"><ul class="result-list"></ul></div>
+            <div id="static_list">
+                <hr/>
+                <!-- collapsble -->
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#1. 基础入门">1. 基础入门</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#1-1-环境要求">1.1 环境要求</a><ul><li class="method"><a href="#1-1-1-环境说明">1.1.1 环境说明</a></li><li class="method"><a href="#1-1-2-php版本要求">1.1.2 php版本要求</a></li><li class="method"><a href="#1-1-3-服务器和数据库">1.1.3 服务器和数据库</a></li></ul></li><li><a href="#1-2-目录结构">1.2 目录结构</a><ul><li class="method"><a href="#1-2-1-项目目录结构">1.2.1 项目目录结构</a></li><li class="method"><a href="#1-2-2-框架目录结构">1.2.2 框架目录结构</a></li></ul></li><li><a href="#1-3-入口文件">1.3 入口文件</a><ul><li class="method"><a href="#1-3-1-入口文件说明">1.3.1 入口文件说明</a></li><li class="method"><a href="#1-3-2-入口文件功能">1.3.2 入口文件功能</a></li><li class="method"><a href="#1-3-3-默认入口文件">1.3.3 默认入口文件</a></li><li class="method"><a href="#1-3-4-重定义入口文件">1.3.4 重定义入口文件</a></li></ul></li><li><a href="#1-4-分层架构">1.4 分层架构</a><ul><li class="method"><a href="#1-4-1-分层说明">1.4.1 分层说明</a></li><li class="method"><a href="#1-4-2-分层设计">1.4.2 分层设计</a></li></ul></li><li><a href="#1-5-自动生成">1.5 自动生成</a><ul><li class="method"><a href="#1-5-1-自动生成说明">1.5.1 自动生成说明</a></li><li class="method"><a href="#1-5-2-代码生成工具">1.5.2 代码生成工具</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#2. 控制器">2. 控制器</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#2-1-控制器定义">2.1 控制器定义</a><ul><li class="method"><a href="#2-1-1-功能说明">2.1.1 功能说明</a></li><li class="method"><a href="#2-1-2-使用约束">2.1.2 使用约束</a></li><li class="method"><a href="#2-1-3-定义控制器">2.1.3 定义控制器</a></li><li class="method"><a href="#2-1-4-使用控制器">2.1.4 使用控制器</a></li><li class="method"><a href="#2-1-5-命名约定">2.1.5 命名约定</a></li></ul></li><li><a href="#2-2-前后置操作">2.2 前后置操作</a><ul><li class="method"><a href="#2-2-1-功能说明">2.2.1 功能说明</a></li><li class="method"><a href="#2-2-2-定义前后置操作">2.2.2 定义前后置操作</a></li></ul></li><li><a href="#2-3-输入变量">2.3 输入变量</a><ul><li class="method"><a href="#2-3-1-功能说明">2.3.1 功能说明</a></li><li class="method"><a href="#2-3-2-获取输入变量">2.3.2 获取输入变量</a></li></ul></li><li><a href="#2-4-绑定变量">2.4 绑定变量</a><ul><li class="method"><a href="#2-4-1-功能说明">2.4.1 功能说明</a></li><li class="method"><a href="#2-4-2-注入变量">2.4.2 注入变量</a></li></ul></li><li><a href="#2-5-页面跳转">2.5 页面跳转</a><ul><li class="method"><a href="#2-5-1-功能说明">2.5.1 功能说明</a></li><li class="method"><a href="#2-5-2-使用页面跳转">2.5.2 使用页面跳转</a></li></ul></li><li><a href="#2-6-url路由">2.6 URL路由</a><ul><li class="method"><a href="#2-6-1-功能说明">2.6.1 功能说明</a></li><li class="method"><a href="#2-6-2-路由规则">2.6.2 路由规则</a></li><li class="method"><a href="#2-6-3-rewrite-配置">2.6.3 rewrite 配置</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#3. 表单组件">3. 表单组件</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#3-1-表单组件定义">3.1 表单组件定义</a><ul><li class="method"><a href="#3-1-1-功能说明">3.1.1 功能说明</a></li><li class="method"><a href="#3-1-2-功能约束">3.1.2 功能约束</a></li><li class="method"><a href="#3-1-3-定义表单组件">3.1.3 定义表单组件</a></li><li class="method"><a href="#3-1-4-验证规则">3.1.4 验证规则</a></li><li class="method"><a href="#3-1-5-命名约定">3.1.5 命名约定</a></li></ul></li><li><a href="#3-2-使用表单组件">3.2 使用表单组件</a><ul><li class="method"><a href="#3-2-1-使用表单组件">3.2.1 使用表单组件</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#4. 业务组件">4. 业务组件</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#4-1-业务组件定义">4.1 业务组件定义</a><ul><li class="method"><a href="#4-1-1-功能说明">4.1.1 功能说明</a></li><li class="method"><a href="#4-1-2-定义业务组件">4.1.2 定义业务组件</a></li><li class="method"><a href="#4-1-3-命名约定">4.1.3 命名约定</a></li></ul></li><li><a href="#4-2-使用业务组件">4.2 使用业务组件</a><ul><li class="method"><a href="#4-2-1-使用约束">4.2.1 使用约束</a></li><li class="method"><a href="#4-2-2-使用业务组件">4.2.2 使用业务组件</a></li><li class="method"><a href="#4-2-3-import与load区别">4.2.3 import与load区别</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#5. 基础模型">5. 基础模型</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#5-1-基础模型定义">5.1 基础模型定义</a><ul><li class="method"><a href="#5-1-1-功能说明">5.1.1 功能说明</a></li><li class="method"><a href="#5-1-2-定义基础模型">5.1.2 定义基础模型</a></li><li class="method"><a href="#5-1-3-关联实体">5.1.3 关联实体</a></li><li class="method"><a href="#5-1-4-命名约定">5.1.4 命名约定</a></li></ul></li><li><a href="#5-2-使用基础模型">5.2 使用基础模型</a><ul><li class="method"><a href="#5-2-1-使用约束">5.2.1 使用约束</a></li><li class="method"><a href="#5-2-2-模型实例化">5.2.2 模型实例化</a></li><li class="method"><a href="#5-2-2-使用基础模型">5.2.2 使用基础模型</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#6. 数据实体">6. 数据实体</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#6-1-数据库规范">6.1 数据库规范</a><ul><li class="method"><a href="#6-1-1-表文件命名规范">6.1.1 表文件命名规范</a></li><li class="method"><a href="#6-1-2-表字段命名规范">6.1.2 表字段命名规范</a></li><li class="method"><a href="#6-1-3-其他规范">6.1.3 其他规范</a></li></ul></li><li><a href="#6-2-数据库路由表">6.2 数据库路由表</a><ul><li class="method"><a href="#6-2-1-功能说明">6.2.1 功能说明</a></li><li class="method"><a href="#6-2-2-路由表配置">6.2.2 路由表配置</a></li><li class="method"><a href="#6-2-3-注意事项">6.2.3 注意事项</a></li><li class="method"><a href="#6-2-4-数据库配置">6.2.4 数据库配置</a></li></ul></li><li><a href="#6-3-数据实体定义">6.3 数据实体定义</a><ul><li class="method"><a href="#6-3-1-功能说明">6.3.1 功能说明</a></li><li class="method"><a href="#6-3-2-定义数据实体">6.3.2 定义数据实体</a></li><li class="method"><a href="#6-3-3-实体属性">6.3.3 实体属性</a></li><li class="method"><a href="#6-3-4-实体接口">6.3.4 实体接口</a></li><li class="method"><a href="#6-3-5-实体与数据表">6.3.5 实体与数据表</a></li><li class="method"><a href="#6-3-6-命名约定">6.3.6 命名约定</a></li></ul></li><li><a href="#6-4-实体语法规则">6.4 实体语法规则</a><ul><li class="method"><a href="#6-4-1-等号规则">6.4.1 等号规则</a></li><li class="method"><a href="#6-4-2-包含规则">6.4.2 包含规则</a></li><li class="method"><a href="#6-4-3-不包含规则">6.4.3 不包含规则</a></li><li class="method"><a href="#6-4-4-区间规则">6.4.4 区间规则</a></li><li class="method"><a href="#6-4-5-模糊左匹配">6.4.5 模糊左匹配</a></li><li class="method"><a href="#6-4-6-模糊全匹配">6.4.6 模糊全匹配</a></li><li class="method"><a href="#6-4-7-模糊右匹配">6.4.7 模糊右匹配</a></li><li class="method"><a href="#6-4-8-全文检索">6.4.8 全文检索</a></li><li class="method"><a href="#6-4-9-原始规则">6.4.9 原始规则</a></li><li class="method"><a href="#6-4-10-排序规则">6.4.10 排序规则</a></li><li class="method"><a href="#6-4-11-分组规则">6.4.11 分组规则</a></li><li class="method"><a href="#6-4-12-取列规则">6.4.12 取列规则</a></li><li class="method"><a href="#6-4-13-取n条数据">6.4.13 取n条数据</a></li><li class="method"><a href="#6-4-14-按位置获取">6.4.14 按位置获取</a></li></ul></li><li><a href="#6-5-使用数据实体">6.5 使用数据实体</a><ul><li class="method"><a href="#6-5-1-新增数据">6.5.1 新增数据</a></li><li class="method"><a href="#6-5-2-删除数据">6.5.2 删除数据</a></li><li class="method"><a href="#6-5-3-修改数据（普通）">6.5.3 修改数据（普通）</a></li><li class="method"><a href="#6-5-4-修改数据（累加）">6.5.4 修改数据（累加）</a></li><li class="method"><a href="#6-5-5-查询数据（单条）">6.5.5 查询数据（单条）</a></li><li class="method"><a href="#6-5-6-查询数据（多条）">6.5.6 查询数据（多条）</a></li><li class="method"><a href="#6-5-7-查询数据（分页）">6.5.7 查询数据（分页）</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#7. 页面视图">7. 页面视图</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#7-1-页面视图定义">7.1 页面视图定义</a><ul><li class="method"><a href="#7-1-1-功能说明">7.1.1 功能说明</a></li><li class="method"><a href="#7-1-2-命名约定">7.1.2 命名约定</a></li><li class="method"><a href="#7-1-3-视图文件代码">7.1.3 视图文件代码</a></li></ul></li><li><a href="#7-2-使用页面视图">7.2 使用页面视图</a><ul><li class="method"><a href="#7-2-1-加载默认视图">7.2.1 加载默认视图</a></li><li class="method"><a href="#7-2-2-加载指定视图">7.2.2 加载指定视图</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#8. 应用工具类组件">8. 应用工具类组件</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#8-1-抽象层组件">8.1 抽象层组件</a><ul><li class="method"><a href="#8-1-1-定义appaction">8.1.1 定义AppAction</a></li><li class="method"><a href="#8-1-2-定义appmodule">8.1.2 定义AppModule</a></li><li class="method"><a href="#8-1-3-定义appmodel">8.1.3 定义AppModel</a></li><li class="method"><a href="#8-1-4-定义appform">8.1.4 定义AppForm</a></li><li class="method"><a href="#8-1-5-加载组件">8.1.5 加载组件</a></li></ul></li><li><a href="#8-2-工具类组件">8.2 工具类组件</a><ul><li class="method"><a href="#8-2-1-存放位置">8.2.1 存放位置</a></li><li class="method"><a href="#8-2-2-加载组件">8.2.2 加载组件</a></li><li class="method"><a href="#8-2-3-使用组件">8.2.3 使用组件</a></li></ul></li><li><a href="#8-3-自动加载">8.3 自动加载</a><ul><li class="method"><a href="#8-3-1-类的自动加载">8.3.1 类的自动加载</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#9. 框架工具类组件">9. 框架工具类组件</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#9-1-组件分类">9.1 组件分类</a><ul><li class="method"><a href="#9-1-1-静态组件">9.1.1 静态组件</a></li><li class="method"><a href="#9-1-2-动态组件">9.1.2 动态组件</a></li></ul></li><li><a href="#9-2-组件配置">9.2 组件配置</a><ul><li class="method"><a href="#9-2-1-静态组件配置">9.2.1 静态组件配置</a></li><li class="method"><a href="#9-2-2-动态组件配置">9.2.2 动态组件配置</a></li></ul></li><li><a href="#9-3-组件介绍">9.3 组件介绍</a><ul><li class="method"><a href="#9-3-1-日志组件">9.3.1 日志组件</a></li><li class="method"><a href="#9-3-2-session-组件">9.3.2 Session 组件</a></li><li class="method"><a href="#9-3-3-登陆认证组件">9.3.3 登陆认证组件</a></li><li class="method"><a href="#9-3-4-文件上传组件">9.3.4 文件上传组件</a></li><li class="method"><a href="#9-3-5-消息队列组件">9.3.5 消息队列组件</a></li><li class="method"><a href="#9-3-6-集合组件">9.3.6 集合组件</a></li><li class="method"><a href="#9-3-7-哈希表组件">9.3.7 哈希表组件</a></li><li class="method"><a href="#9-3-8-rpc组件">9.3.8 RPC组件</a></li><li class="method"><a href="#9-3-9-sphinx组件">9.3.9 sphinx组件</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#10. 系统日志">10. 系统日志</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#10-1-数据库日志">10.1 数据库日志</a><ul><li class="method"><a href="#10-1-1-开启日志记录">10.1.1 开启日志记录</a></li><li class="method"><a href="#10-1-2-输出日志记录">10.1.2 输出日志记录</a></li></ul></li><li><a href="#10-2-错误处理日志">10.2 错误处理日志</a><ul><li class="method"><a href="#10-2-1-错误处理日志说明">10.2.1 错误处理日志说明</a></li><li class="method"><a href="#10-2-2-错误信息提示框">10.2.2 错误信息提示框</a></li><li class="method"><a href="#10-2-3-改变错误信息输出">10.2.3 改变错误信息输出</a></li></ul></ul></div>
+                </div>
+                <div class="collapsble">
+                    <div class="toc_title">
+                        <a href="#11. 系统部署">11. 系统部署</a>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="toc_section"><ul><li class="method"><a href="#11-1-web服务器配置">11.1 web服务器配置</a><ul><li class="method"><a href="#11-1-1-nginx配置">11.1.1 nginx配置</a></li><li class="method"><a href="#11-1-2-apache配置">11.1.2 apache配置</a></li></ul></li><li><a href="#11-2-文件目录">11.2 文件目录</a><ul><li class="method"><a href="#11-2-1-目录权限">11.2.1 目录权限</a></li></ul></ul></div>
+                </div>
+                <!-- end collapsble -->
+            </div>
+        </div>
+    </div>
+    <!-- end sidebar -->
+
+    <!-- container -->
+    <div class="container">
+        <h2 id="GMU">Spring 使用文档</h2>
+        <p><strong>本手册仅针对Spring3.1.*版本！</strong></p>
+        <hr/>
+        <!--<ul class="signature"></ul>-->
+        <article class="clearfix method">
+            <h2 id="1-1-环境要求">1.1 环境要求</h2><hr>
+<p><br></p>
+<h3 id="1-1-1-环境说明">1.1.1 环境说明</h3><p><br>
+框架本身没有什么特别要求，具体的应用系统运行环境视开发所涉及的模块而定。Spring 底层运行的内存消耗极低，而本身的文件大小也是轻量级的，</p>
+<p>因此不会出现空间和内存占用的瓶颈。</p>
+<p><br></p>
+<h3 id="1-1-2-php版本要求">1.1.2 php版本要求</h3><p><br>
+php5.3以上版本</p>
+<p><br></p>
+<h3 id="1-1-3-服务器和数据库">1.1.3 服务器和数据库</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、支持 windows/unix 系服务器环境。
+<span class="number">2</span>、可运行于apache、nginx在内的web服务器
+<span class="number">3</span>、支持多种关系型和非关系型数据库，如：mysql、mssql、oracle、mongo等</code></pre></div><p><br><br><br></p>
+<h2 id="1-2-目录结构">1.2 目录结构</h2><hr>
+<p><br></p>
+<h3 id="1-2-1-项目目录结构">1.2.1 项目目录结构</h3><div class="highlight"><pre><code class="php">.
+├── App            代码文件目录
+│   ├── Action        控制器目录
+│   ├── Console        CLI控制器目录
+│   ├── Entity        数据实体目录
+│   ├── Form        表单组件目录
+│   ├── Hook        钩子目录
+│   ├── Model        基础模型目录
+│   ├── Module        业务组件目录
+│   ├── Util        工具类组件目录
+│   └── View        页面视图目录
+├── Config        配置文件目录
+│   ├── Db        数据库配置文件目录
+│   ├── Extension    扩展配置文件目录
+│   ├── Other        其他配置文件目录
+│   └── Table        数据表路由配置文件目录
+├── Data        附件目录
+├── Resource        程序运行资源目录
+│   ├── Cache        缓存文件目录
+│   ├── Log        日志文件目录
+│   │   ├── Error    错误日志文件目录
+│   │   └── Sql        数据库运行日志文件目录
+│   └── MessageBox    消息框模板目录
+└── <span class="keyword">Static</span>        静态资源文件目录
+    ├── css        样式文件目录
+    ├── images        图片文件目录
+    └── js        js文件目录
+
+index.php        项目入口文件(WEB模式)
+cmd.php            项目入口文件(CLI模式)</code></pre></div><p>描述：上述应用的目录结构只是默认设置，可根据应用的需要做一定的调整，调整应用的目录结构，可在入口文件中重新定义目录常量（目录常量详见 Spring 下的Spring.php）。</p>
+<p><br></p>
+<h3 id="1-2-2-框架目录结构">1.2.2 框架目录结构</h3><div class="highlight"><pre><code class="php">.
+├── Config        组件配置目录
+├── Core        核心组件目录
+├── Db            数据库组件目录
+├── MVC            MVC组件目录
+│   ├── Core        MVC核心组件目录
+│   └── Util        MVC工具类组件目录
+├── ORM            ORM组件目录
+│   ├── Core        ORM核心组件目录
+│   └── Util        ORM工具类组件目录
+└── Util        工具类组件目录
+    ├── Cache        缓存组件目录
+    ├── Queue        队列组件目录
+    ├── Rest        REST组件
+    ├── Rpc        RPC组件目录
+    ├── Structure    数据结构组件目录
+    └── Tool        其他工具类组件</code></pre></div><p><br><br><br></p>
+<h2 id="1-3-入口文件">1.3 入口文件</h2><hr>
+<p><br></p>
+<h3 id="1-3-1-入口文件说明">1.3.1 入口文件说明</h3><p><br>
+Spring 采用单一入口模式进行项目部署和访问，无论完成什么功能，一个应用都有一个统一（但不一定是唯一）的入口。</p>
+<p>应该说，所有应用都是从入口文件开始的，并且不同应用的入口文件是类似的。</p>
+<p><br></p>
+<h3 id="1-3-2-入口文件功能">1.3.2 入口文件功能</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、定义项目路径（必须）
+<span class="number">2</span>、定义系统相关常量（可选）
+<span class="number">3</span>、载入框架入口文件（必须）
+<span class="number">4</span>、启动框架（必须）
+<span class="number">5</span>、其他设置（可选）</code></pre></div><p><br></p>
+<h3 id="1-3-3-默认入口文件">1.3.3 默认入口文件</h3><p><br>
+默认情况下，3.1.x 版本的框架已经自带了一个WEB应用入口文件 index.php（以及默认的目录结构），内容如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * WEB模式
+ */</span>
+set_time_limit(<span class="number">0</span>);    <span class="comment">//设置程序运行超时时间</span>
+ob_start();        <span class="comment">//打开磁盘缓冲(加快速度)</span>
+define(<span class="string">'WebDir'</span>, dirname(<span class="keyword">__FILE__</span>));    <span class="comment">//定义项目路径</span>
+<span class="keyword">require</span>(<span class="string">'../Spring/Spring.php'</span>);    <span class="comment">//载入入口文件</span>
+Spring::run();    <span class="comment">//启动框架</span>
+ob_end_flush();        <span class="comment">//输出全部内容到浏览器</span></code></pre></div><p>描述：入口文件的内容可根据应用的需要进行适当调整。</p>
+<p><br>
+CLI模式入口文件 cmd.php 内容如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * CLI模式
+ */</span>
+set_time_limit(<span class="number">0</span>);                                             <span class="comment">//设置超时时间</span>
+define(<span class="string">'WebDir'</span>, str_replace(<span class="string">"\\"</span>, <span class="string">"/"</span>, dirname(<span class="keyword">__FILE__</span>))); <span class="comment">//定义项目路径</span>
+<span class="variable">$dirs</span> = explode(<span class="string">"/"</span>, WebDir);
+<span class="keyword">unset</span>(<span class="variable">$dirs</span>[count(<span class="variable">$dirs</span>)-<span class="number">1</span>]);
+<span class="variable">$libDir</span> = implode(<span class="string">"/"</span>, <span class="variable">$dirs</span>).<span class="string">'/Spring'</span>;                     <span class="comment">//设置框架路径</span>
+define(<span class="string">'Uri'</span>, <span class="keyword">isset</span>(<span class="variable">$argv</span>[<span class="number">1</span>]) ? <span class="variable">$argv</span>[<span class="number">1</span>] : <span class="string">'index/index/'</span>);    <span class="comment">//设置命令行参数                </span>
+define(<span class="string">'ActionDir'</span>, WebDir.<span class="string">'/App/Console'</span>);                     <span class="comment">//定义控制器存放路径</span>
+<span class="keyword">require</span>(<span class="variable">$libDir</span>.<span class="string">'/Spring.php'</span>);                                 <span class="comment">//载入框架入口文件</span>
+Spring::run(<span class="number">2</span>);                                                 <span class="comment">//以控制台模式启动框架</span></code></pre></div><p><br></p>
+<h3 id="1-3-4-重定义入口文件">1.3.4 重定义入口文件</h3><p><br>
+应用开发中，有时需要对默认的目录结构进行调整，重新定义入口文件中的目录常量就可实现，示例代码如：</p>
+<div class="highlight"><pre><code class="php">
+set_time_limit(<span class="number">0</span>);                
+ob_start();                    
+define(<span class="string">'WebDir'</span>, dirname(<span class="keyword">__FILE__</span>));        
+define(<span class="string">'ConfigDir'</span>, <span class="string">'/www/AppConfig'</span>);    <span class="comment">//重新定义配置文件的目录</span>
+define(<span class="string">'LogDir'</span>, <span class="string">'/tmp/Log'</span>);        <span class="comment">//重新定义日志目录</span>
+<span class="keyword">require</span>(<span class="string">'../Spring/Spring.php'</span>);        
+Spring::<span class="variable">$hook</span> = <span class="string">'appError'</span>;        <span class="comment">//为应用设置错误处理钩子函数（控制错误信息的抛出）</span>
+Spring::run();                                
+ob_end_flush();</code></pre></div><p>描述：Spring 常量详见 Spring/Spring.php</p>
+<p><br><br><br></p>
+<h2 id="1-4-分层架构">1.4 分层架构</h2><hr>
+<p><br></p>
+<h3 id="1-4-1-分层说明">1.4.1 分层说明</h3><p><br>
+系统日趋复杂，处理复杂问题的方法就是分而治之，把复杂的问题分解成一个个简单的问题进行处理； </p>
+<p>这也是面向对象编程的精华，基于这个原则，Spring 对应用程序的结构进行了严格分层，有较强的约</p>
+<p>束性。这样的设计能够保障程序的规范性、可读性，有助于大型系统的可扩展性、可维护性。</p>
+<p><br></p>
+<h3 id="1-4-2-分层设计">1.4.2 分层设计</h3><p><br>
+一个标准的项目层次结构由以下几部分构成：</p>
+<div class="highlight"><pre><code class="php">
+<span class="number">1</span>、数据实体层
+<span class="number">2</span>、基础模型层
+<span class="number">3</span>、业务组件层
+<span class="number">4</span>、集成层（与外围系统整合）
+<span class="number">5</span>、控制器层
+<span class="number">6</span>、表单组件层
+<span class="number">7</span>、钩子层（拦截控制器操作）
+<span class="number">6</span>、页面视图层</code></pre></div><p>描述：各层实现的功能细节请参考相关章节。</p>
+<p><br><br><br></p>
+<h2 id="1-5-自动生成">1.5 自动生成</h2><hr>
+<p><br></p>
+<h3 id="1-5-1-自动生成说明">1.5.1 自动生成说明</h3><p><br>
+为了提高编码效率，Spring 提供了实体和模型代码的自动生成，大多数情况下，数据实体代码一般不需要调整，基础模型代码需要根据应用的需要做修改。</p>
+<p><br></p>
+<h3 id="1-5-2-代码生成工具">1.5.2 代码生成工具</h3><p><br>
+在项目根目录下有一代码生成工具 make.php，内容如下：</p>
+<div class="highlight"><pre><code class="php">
+define(<span class="string">'WebDir'</span>, <span class="string">'.'</span>);                        <span class="comment">//定义项目路径</span>
+<span class="keyword">require</span>(<span class="string">'../Spring/Spring.php'</span>);            <span class="comment">//载入框架入口文件</span>
+<span class="keyword">require</span>(LibDir.<span class="string">'/Util/Tool/MakeCode.php'</span>);    <span class="comment">//载入代码生成工具</span>
+Spring::init();
+
+<span class="comment">//指定数据库名、表前缀</span>
+<span class="variable">$configs</span> = <span class="keyword">array</span>(
+    <span class="comment">//数据库1：生成 imgsearch 库所有的数据实体和基础模型</span>
+    <span class="keyword">array</span>(
+        <span class="string">'name'</span>      =&gt; <span class="string">'imgsearch'</span>,   <span class="comment">//数据库名</span>
+        <span class="string">'prefix'</span>  =&gt; <span class="string">'tm_'</span>,         <span class="comment">//表前缀</span>
+        <span class="string">'contain'</span> =&gt; <span class="string">'*'</span>,            <span class="comment">//所有表</span>
+        ),
+
+    <span class="comment">//数据库2：生成 tmsearch 库指定表的数据实体和基础模型</span>
+    <span class="keyword">array</span>(
+        <span class="string">'name'</span>      =&gt; <span class="string">'tmsearch'</span>,    <span class="comment">//数据库名</span>
+        <span class="string">'prefix'</span>  =&gt; <span class="string">'tm_'</span>,            <span class="comment">//表前缀</span>
+        <span class="string">'contain'</span> =&gt; <span class="keyword">array</span>(<span class="string">'tm_trademark'</span>, <span class="string">'tm_pinyin'</span>, <span class="string">'tm_query_log'</span>),<span class="comment">//指定表</span>
+        ),    
+    );
+
+<span class="comment">//指定数据库配置文件存放路径</span>
+MakeCode::<span class="variable">$configFileDir</span> = WebDir.<span class="string">'/Config/Db'</span>;
+MakeCode::create(<span class="variable">$configs</span>);</code></pre></div><p>描述：运行 make.php 之前必须配置好数据库（详见 6.2.4 数据库配置）</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="2-1-控制器定义">2.1 控制器定义</h2><hr>
+<h3 id="2-1-1-功能说明">2.1.1 功能说明</h3><p><br>
+Spring 的控制器是一个类，而操作则是控制器类的一个公共方法，控制器完成的功能：</p>
+<div class="highlight"><pre><code class="php">
+<span class="number">1</span>、接受浏览器请求，获取输入参数并对参数进行处理
+<span class="number">2</span>、把处理过的参数传递给业务组件，业务组件处理完业务后，接收返回结果
+<span class="number">3</span>、按照页面视图的需求对业务组件返回的结果进行处理，把处理结果绑定到页面视图</code></pre></div><p><br></p>
+<h3 id="2-1-2-使用约束">2.1.2 使用约束</h3><p><br>
+控制器是用户进行功能操作的入口，Spring 出于规范性的考虑，应用不能直接实例化控制器，控制器实例化是由框架完成的，禁止在以下程序组件中进行使用：</p>
+<div class="highlight"><pre><code class="php">
+<span class="number">1.</span>禁止在控制器中直接使用
+<span class="number">2.</span>禁止在业务组件中直接使用
+<span class="number">3.</span>禁止在基础模型中直接使用
+<span class="number">4.</span>禁止在数据实体中直接使用
+<span class="number">5.</span>禁止在其他类库组件或函数中直接使用
+<span class="number">6.</span>禁止在页面视图中直接使用</code></pre></div><p><br></p>
+<h3 id="2-1-3-定义控制器">2.1.3 定义控制器</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 用户管理
+ *
+ * 用户列表、用户详情
+ *
+ *<span class="phpdoc"> @package</span>    Action
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-12
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">UserAction</span> <span class="keyword">extends</span> <span class="title">AppAction</span>
+{</span>
+    <span class="comment">/**
+     * 用户列表
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-12
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span>
+    {</span>
+        <span class="keyword">echo</span> <span class="string">'用户列表'</span>;
+    }
+
+    <span class="comment">/**
+     * 添加用户
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-12
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">detail</span><span class="params">()</span>
+    {</span>
+        <span class="keyword">echo</span> <span class="string">'用户详情'</span>;
+    }
+}</code></pre></div><p>描述：UserAction代表了控制器的类名，通常需要继承 AppAction 类，index、detail 操作是 UserAction 类的公共方法。
+操作方法的定义必须是公共方法，否者会出错（类方法访问限制符请了解面向对象编程基础）.</p>
+<p><br></p>
+<h3 id="2-1-4-使用控制器">2.1.4 使用控制器</h3><p><br>
+通过浏览器访问下面的URL地址：</p>
+<p><a href="http://domain/user/index/">http://domain/user/index/</a></p>
+<p><a href="http://domain/user/detail/">http://domain/user/detail/</a></p>
+<p>会分别输出</p>
+<div class="highlight"><pre><code class="php">
+用户列表
+用户详情</code></pre></div><p><br></p>
+<h3 id="2-1-5-命名约定">2.1.5 命名约定</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、控制器类名采用帕斯卡命名（首字母大写），如：UserAction    UserOrderAction
+<span class="number">2</span>、文件名采用 xxx.action.php 的小写形式，如：user.action.php    userorder.action.php
+<span class="number">3</span>、控制器类文件位于 App/Action 目录下</code></pre></div><p><br><br><br></p>
+<h2 id="2-2-前后置操作">2.2 前后置操作</h2><hr>
+<p><br></p>
+<h3 id="2-2-1-功能说明">2.2.1 功能说明</h3><p><br>
+前置和后置操作指的是在执行某个操作方法之前和之后会自动调用的方法，不过仅对访问控制器有效。</p>
+<p>系统会检测当前操作是否具有前置和后置操作，如果存在就会按照顺序执行。</p>
+<p><br></p>
+<h3 id="2-2-2-定义前后置操作">2.2.2 定义前后置操作</h3><p><br>
+前置和后置操作的示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 用户管理
+ *
+ * 用户详情
+ *
+ *<span class="phpdoc"> @package</span>    Action
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-12
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">UserAction</span> <span class="keyword">extends</span> <span class="title">AppAction</span>
+{</span>
+    <span class="comment">/**
+     * 前置操作
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-12
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">before</span><span class="params">()</span>
+    {</span>
+        <span class="keyword">echo</span> <span class="string">'前置操作逻辑&lt;br&gt;'</span>;
+    }
+
+    <span class="comment">/**
+     * 用户详情
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-12
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">detail</span><span class="params">()</span>
+    {</span>
+        <span class="keyword">echo</span> <span class="string">'用户详情&lt;br&gt;'</span>;
+    }
+
+    <span class="comment">/**
+     * 后置操作
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-12
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">after</span><span class="params">()</span>
+    {</span>
+        <span class="keyword">echo</span> <span class="string">'后置操作逻辑&lt;br&gt;'</span>;
+    }
+}</code></pre></div><p>访问 <a href="http://domain/user/detail/">http://domain/user/detail/</a> 结果会输出</p>
+<div class="highlight"><pre><code class="php">
+前置操作逻辑
+用户详情
+后置操作逻辑</code></pre></div><p>描述：如果控制器没有重写基类 AppAction 的before、after 方法，则执行控制器操作前后都会执行基类的（可用于用户权限检查）。</p>
+<p><br><br><br></p>
+<h2 id="2-3-输入变量">2.3 输入变量</h2><hr>
+<p><br></p>
+<h3 id="2-3-1-功能说明">2.3.1 功能说明</h3><p><br>
+在应用开发过程中，经常需要获取用户提交的数据，这些变量数据错综复杂，而且一不小心就容易引起安全隐患，但是如果利用好 Spring 提供的变量获取功能，就可以轻松的获取和</p>
+<p>驾驭变量了。虽然你仍然可以在开发过程中使用传统方式获取获取用户提交的数据（$_GET、$_POST等），但是不建议直接使用传统方式获取，因为没有统一的安全处理机制，后期如</p>
+<p>果调整的话，改起来会比较麻烦。所以，更好的方式是在系统中统一使用 input 方法进行变量获取和过滤。input 方法是 Spring 用于更加方便和安全的获取输入变量，只能在控制器中使用。</p>
+<p><br></p>
+<h3 id="2-3-2-获取输入变量">2.3.2 获取输入变量</h3><p><br>
+示例代码：$this-&gt;input(’变量名&#39;, &#39;类型&#39;, &#39;默认值&#39;, &#39;参数长度&#39;)，详细如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="variable">$this</span>-&gt;input(<span class="string">'productId'</span>, <span class="string">'int'</span>);        <span class="comment">//转化为整形，获取不到默认为0</span>
+<span class="variable">$this</span>-&gt;input(<span class="string">'classId'</span>, <span class="string">'int'</span>, <span class="number">10</span>);        <span class="comment">//转化为整形，获取不到默认为10</span>
+<span class="variable">$this</span>-&gt;input(<span class="string">'price'</span>, <span class="string">'float'</span>, <span class="number">0.00</span>);        <span class="comment">//转化为浮点数，获取不到默认为0.00</span>
+<span class="variable">$this</span>-&gt;input(<span class="string">'name'</span>, <span class="string">'string'</span>);            <span class="comment">//转化为字符串，获取不到默认为空</span>
+<span class="variable">$this</span>-&gt;input(<span class="string">'name'</span>, <span class="string">'string'</span>, <span class="string">'xxx'</span>);        <span class="comment">//转化为字符串，获取不到默认为 xxx</span>
+<span class="variable">$this</span>-&gt;input(<span class="string">'name'</span>, <span class="string">'string'</span>, <span class="string">''</span>, <span class="number">16</span>);        <span class="comment">//转化为字符串，切取16个长度，获取不到默认为空</span>
+<span class="variable">$this</span>-&gt;input(<span class="string">'content'</span>, <span class="string">'text'</span>);        <span class="comment">//转化为文本，此类型等同原始的 $_GET、$_POST 方式（慎用）</span></code></pre></div><p>描述：上述代码仅在控制器中有效，当用户是通过表单提交数据，字段过多，可采用表单组件进行收集（参考表单组件章节）。</p>
+<p><br><br><br></p>
+<h2 id="2-4-绑定变量">2.4 绑定变量</h2><hr>
+<p><br></p>
+<h3 id="2-4-1-功能说明">2.4.1 功能说明</h3><p><br>
+控制器向页面视图注入变量</p>
+<p><br></p>
+<h3 id="2-4-2-注入变量">2.4.2 注入变量</h3><p><br>
+示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 工作日志管理
+ *
+ * 工作日志详情
+ *
+ *<span class="phpdoc"> @package</span>    Action
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-21
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">EventAction</span> <span class="keyword">extends</span> <span class="title">AppAction</span>
+{</span>
+    <span class="comment">/**
+     * 工作日志详情
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-21
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">detail</span><span class="params">()</span>
+    {</span>
+        <span class="variable">$id</span>   = <span class="variable">$this</span>-&gt;input(<span class="string">'id'</span>, <span class="string">'int'</span>);
+        <span class="variable">$data</span> = <span class="variable">$this</span>-&gt;load(<span class="string">'event'</span>)-&gt;getDetail(<span class="variable">$id</span>);
+        <span class="variable">$tags</span> = <span class="variable">$this</span>-&gt;load(<span class="string">'event'</span>)-&gt;tags;
+
+        <span class="variable">$this</span>-&gt;set(<span class="string">'tags'</span>, <span class="variable">$tags</span>); <span class="comment">//向页面视图注入变量</span>
+        <span class="variable">$this</span>-&gt;set(<span class="string">'data'</span>, <span class="variable">$data</span>); <span class="comment">//向页面视图注入变量</span>
+        <span class="variable">$this</span>-&gt;display();           <span class="comment">//渲染页面视图</span>
+    }
+}</code></pre></div><p><br><br><br></p>
+<h2 id="2-5-页面跳转">2.5 页面跳转</h2><hr>
+<p><br></p>
+<h3 id="2-5-1-功能说明">2.5.1 功能说明</h3><p><br>
+在应用开发中，经常会遇到一些带有提示信息的跳转框，并且自动跳转到另外一个目标页面。</p>
+<p><br></p>
+<h3 id="2-5-2-使用页面跳转">2.5.2 使用页面跳转</h3><p><br></p>
+<h4 id="带信息提示框跳转">带信息提示框跳转</h4><div class="highlight"><pre><code class="php">
+<span class="variable">$bool</span> = <span class="variable">$this</span>-&gt;load(<span class="string">'user'</span>)-&gt;add(<span class="variable">$data</span>);
+<span class="variable">$msg</span>  = <span class="variable">$bool</span> ? <span class="string">'操作成功'</span> : <span class="string">'操作失败'</span>;
+<span class="variable">$url</span>  = <span class="variable">$bool</span> ? <span class="string">'/user/'</span> : <span class="string">'/error/fail/'</span>;
+<span class="variable">$this</span>-&gt;redirect(<span class="variable">$msg</span>, <span class="variable">$url</span>);</code></pre></div><p><br></p>
+<h4 id="不带信息提示框跳转">不带信息提示框跳转</h4><div class="highlight"><pre><code class="php">
+<span class="variable">$bool</span> = <span class="variable">$this</span>-&gt;load(<span class="string">'user'</span>)-&gt;add(<span class="variable">$data</span>);
+<span class="variable">$url</span>  = <span class="variable">$bool</span> ? <span class="string">'/user/'</span> : <span class="string">'/error/fail/'</span>;
+<span class="variable">$this</span>-&gt;redirect(<span class="string">''</span>, <span class="variable">$url</span>);</code></pre></div><p><br><br><br></p>
+<h2 id="2-6-url路由">2.6 URL路由</h2><hr>
+<p><br></p>
+<h3 id="2-6-1-功能说明">2.6.1 功能说明</h3><p><br>
+Spring 采用单一入口模式，通过设定的路由规则把用户请求定位到目标控制器、操作方法上，路由分为静态路由和正则路由。</p>
+<p><br></p>
+<h3 id="2-6-2-路由规则">2.6.2 路由规则</h3><p><br>
+静态路由 URL 格式：</p>
+<div class="highlight"><pre><code class="php">
+<span class="number">1</span>、/                （访问默认控制器 IndexAction）
+<span class="number">2</span>、控制器类名(不带后缀Action)/
+<span class="number">3</span>、控制器类名(不带后缀Action)/操作方法名/ （不带参数）
+<span class="number">4</span>、控制器类名(不带后缀Action)/操作方法名/?param1=v1&amp;param2=v2（带参数：?前的 / 不能少）</code></pre></div><p><br>
+静态路由 URL 与控制器、操作方法、输入参数的对应关系：</p>
+<div class="highlight"><pre><code class="php">
+<span class="number">1</span>、http:<span class="comment">//domain/            // 对应控制器 IndexAction 的 index 方法，默认控制器可在项目入口文件中重新定义 DefaultMod 来改变</span>
+<span class="number">2</span>、http:<span class="comment">//domain/user/            // 对应控制器 UserAction 的 index 方法，默认操作方法为 index</span>
+<span class="number">3</span>、http:<span class="comment">//domain/user/add/        // 对应控制器 UserAction 的 add 方法</span>
+<span class="number">4</span>、http:<span class="comment">//domain/user/detail/?userId=10    // 对应控制器 UserAction 的 detail 方法，参数为 userId（获取参数参考输入变量章节）</span></code></pre></div><p>描述：除参数外，URL不区分大小写</p>
+<p><br>
+正则路由 URL 格式可任意，需要自定义正则表达式来匹配，示例如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * url 正则路由，对应 http://domain/user_2.html
+ */</span>
+<span class="variable">$rules</span>[] = <span class="keyword">array</span>(
+    <span class="string">'#/user_#'</span>,
+    <span class="keyword">array</span>(<span class="string">'mod'</span> =&gt; <span class="string">'user'</span>, <span class="string">'action'</span> =&gt; <span class="string">'detail'</span>),
+    <span class="keyword">array</span>(
+        <span class="string">'userId'</span> =&gt; <span class="string">'#(\d+).html#'</span>,
+        ),
+);
+
+
+<span class="comment">/**
+ * url 正则路由，对应 http://domain/udoc/2.html
+ */</span>
+<span class="variable">$rules</span>[] = <span class="keyword">array</span>(
+    <span class="string">'#/udoc/\d+.html#'</span>,
+    <span class="keyword">array</span>(<span class="string">'mod'</span> =&gt; <span class="string">'user'</span>, <span class="string">'action'</span> =&gt; <span class="string">'detail'</span>),
+    <span class="keyword">array</span>(
+        <span class="string">'userId'</span> =&gt; <span class="string">'#(\d+).html#'</span>,
+        ),
+);
+
+<span class="comment">// 原始地址 http://domain/user/detail/?userId=2 也可访问，同一个页面可以有多个 URL 别名地址</span></code></pre></div><p>描述：上述正则路由配置信息存放于 Config/Extension/url.route.config.php 文件中，Spring 会自动加载该配置文件进行解析。</p>
+<p><br></p>
+<h3 id="2-6-3-rewrite-配置">2.6.3 rewrite 配置</h3><p><br>
+要支持URL路由，web服务器端必须进行 rewrite 配置规则的编写，示例如下：</p>
+<h4 id="apache-rewrite规则">apache rewrite规则</h4><div class="highlight"><pre><code class="php">
+&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+&lt;/IfModule&gt;</code></pre></div><p>描述：配置规则存放在与入口文件 index.php 同一目录下的 .htaccess 文件中</p>
+<p><br></p>
+<h4 id="nginx-rewrite规则">nginx rewrite规则</h4><div class="highlight"><pre><code class="php">
+location / {
+        <span class="keyword">if</span> (!-e <span class="variable">$request_filename</span>) {
+
+            rewrite ^/(\d+|[a-zA-Z]+)/?(.*)?             /index.php?mod=$<span class="number">1</span>&amp;action=index&amp;$<span class="number">2</span> last;            
+            rewrite ^/(\d+|[a-zA-Z]+)/(\d+|[a-zA-Z]+)/?(.*)? /index.php?mod=$<span class="number">1</span>&amp;action=$<span class="number">2</span>&amp;$<span class="number">3</span> last;
+            <span class="keyword">break</span>;
+        }
+    }</code></pre></div><p>描述：配置规则直接写在 nginx 配置文件中即可</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="3-1-表单组件定义">3.1 表单组件定义</h2><hr>
+<p><br></p>
+<h3 id="3-1-1-功能说明">3.1.1 功能说明</h3><p><br>
+表单组件是一个类，用于收集表单数据，并做相应的数据校验，当表单字段较多时（3个以上），推荐使用。</p>
+<p><br></p>
+<h3 id="3-1-2-功能约束">3.1.2 功能约束</h3><p><br>
+表单组件的实例化是由框架完成的，禁止应用直接实例化，表单组件之间不能相互调用，只能在控制器中使用。</p>
+<p><br></p>
+<h3 id="3-1-3-定义表单组件">3.1.3 定义表单组件</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 添加工作日志表单验证组件
+ *
+ *<span class="phpdoc"> @package</span>    Form
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-15
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">EventAddForm</span> <span class="keyword">extends</span> <span class="title">AppForm</span>
+{</span>
+    <span class="comment">/**
+     * 字段映射(建立表单字段与程序字段或数据表字段的关联)
+     */</span>
+    <span class="keyword">protected</span> <span class="variable">$map</span> = <span class="keyword">array</span>(
+        <span class="string">'title'</span> =&gt; <span class="keyword">array</span>(
+            <span class="string">'field'</span> =&gt; <span class="string">'topic'</span>,
+            <span class="string">'match'</span> =&gt; <span class="keyword">array</span>(<span class="string">'require'</span>, date(<span class="string">"Y-m-d"</span>, time()).<span class="string">'工作日志'</span>, <span class="string">''</span>), <span class="comment">//为空就采用默认值</span>
+            ),
+        <span class="string">'content'</span> =&gt; <span class="keyword">array</span>(
+            <span class="string">'field'</span> =&gt; <span class="string">'content'</span>,
+            <span class="string">'match'</span> =&gt; <span class="keyword">array</span>(<span class="string">'require'</span>, <span class="string">''</span>, <span class="string">'内容不能为空'</span>), <span class="comment">//强验证，为空则提示 "内容不能为空"</span>
+            ),
+        <span class="string">'tag'</span> =&gt; <span class="keyword">array</span>(
+            <span class="string">'field'</span>  =&gt; <span class="string">'tagIds'</span>,
+            <span class="string">'method'</span> =&gt; <span class="string">'tag'</span>,    <span class="comment">//设置回调方法验证（用于处理复杂校验）</span>
+            ),
+        <span class="string">'attachment'</span> =&gt; <span class="keyword">array</span>(
+            <span class="string">'field'</span>  =&gt; <span class="string">'attachment'</span>,
+            <span class="string">'method'</span> =&gt; <span class="string">'attachment'</span>, <span class="comment">//设置回调方法验证（用于处理复杂校验）</span>
+            ),
+        <span class="string">'doTime'</span> =&gt; <span class="keyword">array</span>(
+            <span class="string">'field'</span> =&gt; <span class="string">'doTime'</span>,
+            <span class="string">'method'</span> =&gt; <span class="string">'doTime'</span>, <span class="comment">//设置回调方法验证（用于处理复杂校验）</span>
+            ),
+        <span class="string">'userId'</span> =&gt; <span class="keyword">array</span>(
+            <span class="string">'field'</span> =&gt; <span class="string">'userId'</span>,
+            <span class="string">'match'</span> =&gt; <span class="keyword">array</span>(<span class="string">'int'</span>, <span class="string">'100'</span>, <span class="string">''</span>), <span class="comment">//为空就采用默认值 100，不为空则转换为整形</span>
+            ),
+        );
+
+    <span class="comment">/**
+     * 标签处理
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-15
+     * 
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    array    $value    标签id
+     *<span class="phpdoc"> @return</span>    string
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">tag</span><span class="params">(<span class="variable">$value</span>)</span>
+    {</span>
+        <span class="keyword">if</span> ( <span class="keyword">empty</span>(<span class="variable">$value</span>) ) {
+            <span class="variable">$this</span>-&gt;stop(<span class="string">'标签不能为空'</span>);
+        }
+
+        <span class="keyword">return</span> is_array(<span class="variable">$value</span>) ? implode(<span class="string">','</span>, <span class="variable">$value</span>) : <span class="string">''</span>;
+    }
+
+    <span class="comment">/**
+     * 附件处理
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-15
+     * 
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    array    $value    附件
+     *<span class="phpdoc"> @return</span>    string
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">attachment</span><span class="params">(<span class="variable">$value</span>)</span>
+    {</span>
+        <span class="keyword">return</span> !<span class="keyword">empty</span>(<span class="variable">$value</span>) &amp;&amp; is_array(<span class="variable">$value</span>) ? implode(<span class="string">','</span>, <span class="variable">$value</span>) : <span class="string">''</span>;
+    }
+
+    <span class="comment">/**
+     * 验证日期、格式化处理
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-15
+     * 
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    string    $value    工作日期
+     *<span class="phpdoc"> @return</span>    int
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">doTime</span><span class="params">(<span class="variable">$value</span>)</span>
+    {</span>
+        <span class="variable">$value</span> = trim(<span class="variable">$value</span>);
+        <span class="keyword">if</span> ( <span class="keyword">empty</span>(<span class="variable">$value</span>) ) {
+            <span class="variable">$this</span>-&gt;stop(<span class="string">'工作日期不能为空'</span>);
+        }
+
+        <span class="keyword">return</span> strtotime(<span class="variable">$value</span>);
+    }
+}</code></pre></div><p>描述：字段映射配置是由多个配置节点组成，每个配置节点名为表单字段名、其配置节点下的 field 对
+应的值为程序字段或数据库字段，如：title 是表单字段、topic 为数据表字段(表单字段可以和数
+据表字段相同)。</p>
+<p><br></p>
+<h3 id="3-1-4-验证规则">3.1.4 验证规则</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、字段正则匹配校验（如：上述配置节点<span class="number">1</span>、<span class="number">2</span>、<span class="number">6</span>），正则表达式位于基类AppForm 中，可根据应用做调整。
+<span class="number">2</span>、设置回调函数校验（如：上述配置节点<span class="number">3</span>、<span class="number">4</span>、<span class="number">5</span>），处理较为复杂的校验规则。</code></pre></div><p><br></p>
+<h3 id="3-1-5-命名约定">3.1.5 命名约定</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、表单组件类名采用帕斯卡命名，继承了表单组件基类 AppForm .
+<span class="number">2</span>、类名由控制器类名（不带后缀Action）、控制器方法名、Form字符串组合而成，如：EventAddForm .
+<span class="number">3</span>、文件名采用 xxx.form.php 的小写形式，如：eventadd.form.php . 
+<span class="number">4</span>、文件位于 App/Form 目录下.</code></pre></div><p><br><br><br></p>
+<h2 id="3-2-使用表单组件">3.2 使用表单组件</h2><hr>
+<p><br></p>
+<h3 id="3-2-1-使用表单组件">3.2.1 使用表单组件</h3><p><br>
+在控制器中使用表单组件的示例如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 工作日志管理
+ *
+ * 添加工作日志
+ *
+ *<span class="phpdoc"> @package</span>    Action
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-20
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">EventAction</span> <span class="keyword">extends</span> <span class="title">AppAction</span>
+{</span>
+
+    <span class="comment">/**
+     * 添加工作日志
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-20
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span>
+    {</span>
+        <span class="comment">//收集表单数据</span>
+        <span class="variable">$data</span> = <span class="variable">$this</span>-&gt;getFormData();
+    }
+}</code></pre></div><p>描述：表单组件的使用仅在控制器中有效</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="4-1-业务组件定义">4.1 业务组件定义</h2><hr>
+<p><br></p>
+<h3 id="4-1-1-功能说明">4.1.1 功能说明</h3><p><br>
+访问基础模型完成业务逻辑的组装。</p>
+<p><br></p>
+<h3 id="4-1-2-定义业务组件">4.1.2 定义业务组件</h3><p><br>
+示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 用户组件
+ *
+ * 删除用户
+ * 
+ *<span class="phpdoc"> @package</span>    Module
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-22
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">UserModule</span> <span class="keyword">extends</span> <span class="title">AppModule</span>
+{</span>
+    <span class="comment">/**
+     * 引用业务模型
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$models</span> = <span class="keyword">array</span>(
+        <span class="string">'user'</span>  =&gt; <span class="string">'User'</span>,    <span class="comment">// 键为标签、值为模型类名不带后缀 Model</span>
+        <span class="string">'event'</span> =&gt; <span class="string">'Event'</span>,
+        );
+
+    <span class="comment">/**
+     * 删除用户（使用事务）
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-22
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    int        $userId        用户id
+     *<span class="phpdoc"> @return</span>    bool
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">delete</span><span class="params">(<span class="variable">$userId</span>)</span>
+    {</span>
+        <span class="comment">/**
+         * User 为执行事务块代码之间，其中的一个数据实体，也可使用 Event 数据实体
+         * 选择数据实体主要用于定位当前执行事务的数据库，事务块前后选择的实体要配对
+         * 进行跨库提交事务也是同样的用法（谨记事务块前后的数据实体一定要配对）
+         */</span>
+        <span class="variable">$this</span>-&gt;begin(<span class="string">'User'</span>);
+        <span class="variable">$boolA</span> = <span class="variable">$this</span>-&gt;import(<span class="string">'user'</span>)-&gt;delete(<span class="variable">$userId</span>);
+        <span class="variable">$boolB</span> = <span class="variable">$this</span>-&gt;import(<span class="string">'event'</span>)-&gt;deleteAll(<span class="variable">$userId</span>);
+
+        <span class="keyword">if</span> ( <span class="variable">$boolA</span> &amp;&amp; <span class="variable">$boolB</span> ) {
+            <span class="keyword">return</span> <span class="variable">$this</span>-&gt;commit(<span class="string">'User'</span>); <span class="comment">// 提交失败自动回滚</span>
+        } <span class="keyword">else</span> {
+            <span class="keyword">return</span> <span class="variable">$this</span>-&gt;rollBack(<span class="string">'User'</span>); <span class="comment">// 用于逻辑回滚</span>
+        }
+    }
+}</code></pre></div><p><br></p>
+<h3 id="4-1-3-命名约定">4.1.3 命名约定</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、业务组件类名采用帕斯卡命名（首字母大写），如：UserModule    UserOrderModule
+<span class="number">2</span>、文件名采用 xxx.module.php 的小写形式，如：user.module.php    userorder.module.php
+<span class="number">3</span>、文件位于 App/Module 目录下.</code></pre></div><p><br><br><br></p>
+<h2 id="4-2-使用业务组件">4.2 使用业务组件</h2><hr>
+<p><br></p>
+<h3 id="4-2-1-使用约束">4.2.1 使用约束</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、在控制器中使用
+<span class="number">2</span>、在业务组件中使用（业务组件之间可相互调用）
+<span class="number">3</span>、除以上使用场景外，禁止在其它任意程序组件中使用</code></pre></div><p><br></p>
+<h3 id="4-2-2-使用业务组件">4.2.2 使用业务组件</h3><p><br>
+在控制器和业务组件中使用业务组件的示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="variable">$data</span> = <span class="variable">$this</span>-&gt;load(<span class="string">'Dataset'</span>)-&gt;get(<span class="variable">$key</span>, <span class="variable">$this</span>-&gt;num, <span class="variable">$this</span>-&gt;page);    <span class="comment">// Dataset 为业务组件类名</span></code></pre></div><p><br></p>
+<h3 id="4-2-3-import与load区别">4.2.3 import与load区别</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、import 用于构造基础模型对象，构造之前需要引用基础模型，参数为基础模型标签。
+<span class="number">2</span>、load 用于构造业务组件对象，不需要做任何引用，参数为业务组件类名。</code></pre></div><p>描述：使用时注意区分，不要搞混淆了</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="5-1-基础模型定义">5.1 基础模型定义</h2><hr>
+<p><br></p>
+<h3 id="5-1-1-功能说明">5.1.1 功能说明</h3><p><br>
+访问数据实体操作业务数据，完成与本模型相关的业务逻辑。</p>
+<p><br></p>
+<h3 id="5-1-2-定义基础模型">5.1.2 定义基础模型</h3><p><br>
+示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 工作日志
+ *
+ * 获取工作日志id分页列表、添加工作日志、编辑工作日志、删除工作日志、删除所有工作日志
+ * 
+ *<span class="phpdoc"> @package</span>    Model
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-22
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">EventModel</span> <span class="keyword">extends</span> <span class="title">AppModel</span>
+{</span>
+    <span class="comment">/**
+     * 获取工作日志id分页列表
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-22
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    int        $userId        用户id
+     *<span class="phpdoc"> @param</span>    int        $page        页码
+     *<span class="phpdoc"> @param</span>    int        $num        返回条数
+     *<span class="phpdoc"> @return</span>    array
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getIdsPageList</span><span class="params">(<span class="variable">$userId</span>, <span class="variable">$page</span> = <span class="number">1</span>, <span class="variable">$num</span> = <span class="number">20</span>)</span>
+    {</span>
+        <span class="variable">$r</span>[<span class="string">'eq'</span>]    = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="variable">$userId</span>);
+        <span class="variable">$r</span>[<span class="string">'col'</span>]   = <span class="keyword">array</span>(<span class="string">'id'</span>);
+        <span class="variable">$r</span>[<span class="string">'order'</span>] = <span class="keyword">array</span>(<span class="string">'doTime'</span> =&gt; <span class="string">'desc'</span>);
+        <span class="variable">$r</span>[<span class="string">'page'</span>]  = <span class="variable">$page</span>;
+        <span class="variable">$r</span>[<span class="string">'limit'</span>] = <span class="variable">$num</span>;
+
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;findAll(<span class="variable">$r</span>);
+    }
+
+    <span class="comment">/**
+     * 添加工作日志
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-06-18
+     * 
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    array    $data    日志数据
+     *<span class="phpdoc"> @return</span>    int
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(<span class="variable">$data</span>)</span>
+    {</span>
+        <span class="variable">$record</span> = <span class="keyword">array</span>(
+            <span class="string">'userId'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'userId'</span>],
+            <span class="string">'content'</span>    =&gt; <span class="variable">$data</span>[<span class="string">'content'</span>],
+            <span class="string">'tagIds'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'tagIds'</span>],
+            <span class="string">'attachment'</span> =&gt; <span class="variable">$data</span>[<span class="string">'attachment'</span>],
+            <span class="string">'doTime'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'doTime'</span>],
+            <span class="string">'created'</span>    =&gt; time(),
+            );
+
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;create(<span class="variable">$record</span>);
+    }
+
+    <span class="comment">/**
+     * 编辑工作日志
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-22
+     * 
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    array    $data    日志数据
+     *<span class="phpdoc"> @return</span>    bool
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">edit</span><span class="params">(<span class="variable">$data</span>)</span>
+    {</span>
+        <span class="variable">$record</span> = <span class="keyword">array</span>(
+            <span class="string">'content'</span>    =&gt; <span class="variable">$data</span>[<span class="string">'content'</span>],
+            <span class="string">'tagIds'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'tagIds'</span>],
+            <span class="string">'attachment'</span> =&gt; <span class="variable">$data</span>[<span class="string">'attachment'</span>],
+            <span class="string">'doTime'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'doTime'</span>],
+            <span class="string">'updated'</span>    =&gt; time(),
+            );
+        <span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="variable">$data</span>[<span class="string">'userId'</span>], <span class="string">'id'</span> =&gt; <span class="variable">$data</span>[<span class="string">'id'</span>]);
+
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;modify(<span class="variable">$record</span>, <span class="variable">$r</span>);
+    }
+
+    <span class="comment">/**
+     * 删除工作日志
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-22
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    int        $userId        用户id
+     *<span class="phpdoc"> @param</span>    int        $id            工作日志id
+     *<span class="phpdoc"> @return</span>    bool
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">delete</span><span class="params">(<span class="variable">$userId</span>, <span class="variable">$id</span>)</span>
+    {</span>
+        <span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="variable">$userId</span>, <span class="string">'id'</span> =&gt; <span class="variable">$id</span>);
+
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;remove(<span class="variable">$r</span>);
+    }
+
+    <span class="comment">/**
+     * 删除所有工作日志
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-06-12
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    int        $userId        用户id
+     *<span class="phpdoc"> @return</span>    bool
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">deleteAll</span><span class="params">(<span class="variable">$userId</span>)</span>
+    {</span>
+        <span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="variable">$userId</span>);
+
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;remove(<span class="variable">$r</span>);
+    }
+}</code></pre></div><p>描述：当上述模型操作数据库时，会自动关联数据实体类 EventApi。</p>
+<p><br></p>
+<h3 id="5-1-3-关联实体">5.1.3 关联实体</h3><p><br>
+默认情况下每个模型会自动关联一个数据实体，也可以修改默认关联的数据实体，示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="class"><span class="keyword">class</span> <span class="title">UserModel</span> <span class="keyword">extends</span> <span class="title">AppModel</span>
+{</span>
+    <span class="comment">// 自动关联数据实体 UserApi</span>
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">UserOrderModel</span> <span class="keyword">extends</span> <span class="title">AppModel</span>
+{</span>
+    <span class="comment">// 自动关联数据实体 UserOrderApi</span>
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">TrademarkModel</span> <span class="keyword">extends</span> <span class="title">AppModel</span>
+{</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">search</span><span class="params">(<span class="variable">$keyword</span>, <span class="variable">$classIds</span>, <span class="variable">$num</span>, <span class="variable">$way</span> = <span class="number">1</span>)</span>
+    {</span>
+        <span class="variable">$this</span>-&gt;change(<span class="string">'TrademarkSphinx'</span>); <span class="comment">// 修改默认关联的数据实体 </span>
+
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;find(<span class="variable">$r</span>);
+    }
+}</code></pre></div><p><br></p>
+<h3 id="5-1-4-命名约定">5.1.4 命名约定</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、模型类名采用帕斯卡命名（首字母大写），如：UserModel    UserOrderModel
+<span class="number">2</span>、文件名采用 xxx.model.php 的小写形式，如：user.model.php    userorder.model.php
+<span class="number">3</span>、文件位于 App/Model 目录下</code></pre></div><p><br><br><br></p>
+<h2 id="5-2-使用基础模型">5.2 使用基础模型</h2><hr>
+<p><br></p>
+<h3 id="5-2-1-使用约束">5.2.1 使用约束</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、基础模型仅能在业务组件中使用。
+<span class="number">2</span>、为了兼容之前的版本，暂时并未废除在控制器和模型中使用（后续版本会废除，慎用）。</code></pre></div><p><br></p>
+<h3 id="5-2-2-模型实例化">5.2.2 模型实例化</h3><p>模型实例化有两种方式：指定引用关系（推荐）、不指定引用关系（不推荐）</p>
+<p><br></p>
+<h4 id="指定引用关系（推荐）">指定引用关系（推荐）</h4><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 指定引用关系（tm为标签、UserOrder为模型类不带后缀Model）
+ */</span>
+<span class="keyword">public</span> <span class="variable">$models</span> = <span class="keyword">array</span>(
+    <span class="string">'order'</span> =&gt; <span class="string">'UserOrder'</span>,
+    );
+
+<span class="comment">//实例化模型对象</span>
+<span class="variable">$this</span>-&gt;import(<span class="string">'order'</span>);
+
+<span class="comment">//调用模型方法</span>
+<span class="variable">$this</span>-&gt;import(<span class="string">'order'</span>)-&gt;changeStatus(<span class="variable">$orderId</span>, <span class="variable">$status</span>);</code></pre></div><p><br></p>
+<h4 id="不指定引用关系">不指定引用关系</h4><div class="highlight"><pre><code class="php">
+<span class="comment">//实例化模型对象</span>
+<span class="variable">$this</span>-&gt;import(<span class="string">'UserOrder'</span>, <span class="number">2</span>);
+
+<span class="comment">//调用模型方法</span>
+<span class="variable">$this</span>-&gt;import(<span class="string">'UserOrder'</span>, <span class="number">2</span>)-&gt;getOrderList(<span class="variable">$userId</span>);</code></pre></div><p>描述：在有些特殊情况下，需要根据复杂的关系动态使用模型（如：工作流引擎），不适宜指定引用关系，可采用这种使用方式。</p>
+<p><br></p>
+<h3 id="5-2-2-使用基础模型">5.2.2 使用基础模型</h3><p><br>
+在业务组件中使用基础模型的示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 用户组件
+ *
+ * 获取用户信息
+ * 
+ *<span class="phpdoc"> @package</span>    Module
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-22
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">UserModule</span> <span class="keyword">extends</span> <span class="title">AppModule</span>
+{</span>
+    <span class="comment">/**
+     * 引用业务模型（键为标签、值为模型类不带Model后缀）
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$models</span> = <span class="keyword">array</span>(
+        <span class="string">'user'</span>     =&gt; <span class="string">'User'</span>,
+        <span class="string">'team'</span>     =&gt; <span class="string">'Team'</span>,
+        <span class="string">'position'</span> =&gt; <span class="string">'Position'</span>,
+        );
+
+
+    <span class="comment">/**
+     * 获取用户信息
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-22
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    int        $userId        用户id
+     *<span class="phpdoc"> @return</span>    array
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getDetail</span><span class="params">(<span class="variable">$userId</span>)</span>
+    {</span>
+        <span class="variable">$user</span> = <span class="variable">$this</span>-&gt;import(<span class="string">'user'</span>)-&gt;get(<span class="variable">$userId</span>);
+        <span class="keyword">if</span> ( <span class="keyword">empty</span>(<span class="variable">$user</span>) ) {
+            <span class="keyword">return</span> <span class="keyword">array</span>();
+        }
+
+        <span class="variable">$user</span>[<span class="string">'teamName'</span>]     = <span class="variable">$this</span>-&gt;import(<span class="string">'team'</span>)-&gt;get(<span class="variable">$user</span>[<span class="string">'teamId'</span>], <span class="string">'name'</span>);
+        <span class="variable">$user</span>[<span class="string">'positionName'</span>] = <span class="variable">$this</span>-&gt;import(<span class="string">'position'</span>)-&gt;get(<span class="variable">$user</span>[<span class="string">'positionId'</span>], <span class="string">'name'</span>);
+
+        <span class="keyword">return</span> <span class="variable">$user</span>;
+    }
+}</code></pre></div><p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <p><br></p>
+<h2 id="6-1-数据库规范">6.1 数据库规范</h2><hr>
+<p><br></p>
+<h3 id="6-1-1-表文件命名规范">6.1.1 表文件命名规范</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、数据表名须带有前缀
+<span class="number">2</span>、数据表名统一采用英文对应命名，不能用复数形式
+<span class="number">3</span>、数据表名统一小写
+<span class="number">4</span>、不同数据业务表名，统一用下划线( _ )间隔
+<span class="number">5</span>、同模块数据表归类处理
+
+示例如：ps_flow    ps_flow_node    ps_flow_node_map</code></pre></div><h3 id="6-1-2-表字段命名规范">6.1.2 表字段命名规范</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、统一采用驼峰式命名，如userId,userType,roomId 
+<span class="number">2</span>、采用英文对应命名
+<span class="number">3</span>、所有字段都不为空并设置默认值
+<span class="number">4</span>、判断型字段（逻辑型字段：<span class="number">0</span>、<span class="number">1</span>）命名，如: isDo、 isCheck、isMobile、isMail
+<span class="number">5</span>、时间型字段采用unix 时间戳</code></pre></div><h3 id="6-1-3-其他规范">6.1.3 其他规范</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、字符集统一为UTF8，数据表引擎统一为InnoDB
+<span class="number">2</span>、每一张数据表必须包含字段：自增ID、创建时间（created），修改时间（updated）;便于做缓存控制、其他用途等
+<span class="number">3</span>、自增ID统一都为数据表主键，索引建立视需求而定
+<span class="number">4</span>、所有字段必须要有字段注释、所有数据表必须有表名注释</code></pre></div><p><br><br><br></p>
+<h2 id="6-2-数据库路由表">6.2 数据库路由表</h2><hr>
+<p><br></p>
+<h3 id="6-2-1-功能说明">6.2.1 功能说明</h3><p><br>
+Spring 访问数据表是通过路由表进行的，这样的设计便于后期对数据库进行拆分，拆分不会涉及应用层面代码的调整，只
+需要调整路由表的配置节点即可，具有很强的伸缩性，可以充分利用多数据库服务器的集群。</p>
+<p><br></p>
+<h3 id="6-2-2-路由表配置">6.2.2 路由表配置</h3><div class="highlight"><pre><code class="php">
+<span class="variable">$prefix</span>        = <span class="string">'t_'</span>;        <span class="comment">//表前缀</span>
+<span class="variable">$dbId</span>        = <span class="string">'demo2'</span>;    <span class="comment">//数据库名</span>
+<span class="variable">$configFile</span>    = <span class="keyword">array</span>( ConfigDir.<span class="string">'/Db/demo2.master.config.php'</span> );    <span class="comment">//数据库配置文件（内容为数据库服务器连接信息）</span>
+
+<span class="comment">/**
+ * 路由配置节点，每个数据表对应一个配置节点
+ * 每个配置节点关联一个数据实体类（数据实体与数据表一一对应）
+ * 此实例配置节点关联 demo2 数据库中的表 t_event，关联数据实体 EventApi
+ */</span>
+<span class="variable">$tbl</span>[<span class="string">'event'</span>] = <span class="keyword">array</span>(
+    <span class="string">'name'</span>        =&gt; <span class="variable">$prefix</span>.<span class="string">'event'</span>,    <span class="comment">// 数据表名全称</span>
+    <span class="string">'dbId'</span>        =&gt; <span class="variable">$dbId</span>,        <span class="comment">// 数据库名称</span>
+    <span class="string">'configFile'</span>=&gt; <span class="variable">$configFile</span>,        <span class="comment">// 数据库配置文件</span>
+);
+
+<span class="comment">//关联数据实体 UserGroupApi，文件位于 App/Entity/usergroup.api.php</span>
+<span class="variable">$tbl</span>[<span class="string">'userGroup'</span>] = <span class="keyword">array</span>(
+    <span class="string">'name'</span>        =&gt; <span class="variable">$prefix</span>.<span class="string">'user_group'</span>,
+    <span class="string">'dbId'</span>        =&gt; <span class="variable">$dbId</span>, 
+    <span class="string">'configFile'</span>=&gt; <span class="variable">$configFile</span>,
+);</code></pre></div><p><br></p>
+<h3 id="6-2-3-注意事项">6.2.3 注意事项</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、数据库与路由表是一一对应的，即：每个数据库对应一个路由表。
+<span class="number">2</span>、路由表配置文件名由 dbname.table.config.php 的小写形式组成，文件位于 Config/Table 目录下。
+<span class="number">3</span>、Config/Table/table.route.config.php 是总路由表，它会把多个子路由表聚合在一起。
+<span class="number">4</span>、如果子路由表之间发生了命名冲突（几个库表名一样），需要自行调整子路由表配置节点的命名，
+   如：<span class="variable">$tbl</span>[<span class="string">'user'</span>] 发生冲突，可以调整其中一个，<span class="variable">$tbl</span>[<span class="string">'user'</span>] 改为 <span class="variable">$tbl</span>[<span class="string">'member'</span>]，直到没有
+   冲突为止，最好见名之意。建议在数据库中调整表名。</code></pre></div><p><br></p>
+<h3 id="6-2-4-数据库配置">6.2.4 数据库配置</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 数据库连接配置信息
+ */</span>
+<span class="variable">$user</span>     = <span class="string">"demo2"</span>;        <span class="comment">// 账户</span>
+<span class="variable">$password</span> = <span class="string">"123456"</span>;        <span class="comment">// 密码    </span>
+<span class="variable">$host</span>     = <span class="string">"192.168.0.192"</span>;    <span class="comment">// 主机</span>
+<span class="variable">$port</span>     = <span class="string">"3306"</span>;        <span class="comment">// 端口</span>
+<span class="variable">$db</span>       = <span class="string">"demo2"</span>;        <span class="comment">// 数据库名     </span>
+<span class="variable">$dsn</span>      = <span class="string">"mysql:host=$host;port=$port;dbname=$db"</span>;    <span class="comment">//数据库连接字符串</span>
+<span class="variable">$encode</span>   = <span class="string">"utf8"</span>;        <span class="comment">// 字符集</span></code></pre></div><p>描述：配置文件名由 dbname.master.config.php 的小写形式组成，文件位于 Config/Db 目录下。
+如果一个应用中使用了多个数据库，则会存在多个数据库配置文件.</p>
+<p><br><br><br></p>
+<h2 id="6-3-数据实体定义">6.3 数据实体定义</h2><hr>
+<p><br></p>
+<h3 id="6-3-1-功能说明">6.3.1 功能说明</h3><p><br>
+数据实体提供数据服务，完成的主要功能：</p>
+<div class="highlight"><pre><code class="php">
+<span class="number">1</span>、提供数据源操作接口：增、删、改、查、事务
+<span class="number">2</span>、提供数据源操作日志记录（需要设置日志开关）
+<span class="number">3</span>、为性能优化提供扩展：分表分库、异构数据库、缓存、消息队列、全文索引（Sphinx、Solr）等</code></pre></div><p><br></p>
+<h3 id="6-3-2-定义数据实体">6.3.2 定义数据实体</h3><p><br>
+示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ +------------------------------------------------------------------------------
+ * Spring框架 数据实体层
+ +------------------------------------------------------------------------------
+ *<span class="phpdoc"> @mobile</span>    13183857698
+ *<span class="phpdoc"> @qq</span>        78252859
+ *<span class="phpdoc"> @author</span>  void &lt;lkf5_303@163.com&gt;
+ *<span class="phpdoc"> @version</span> 3.0
+ +------------------------------------------------------------------------------
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">EventApi</span> <span class="keyword">extends</span> <span class="title">Entity</span>
+{</span>
+    <span class="comment">/**
+     * 数据表键[表的唯一标识]
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$tableKey</span> = <span class="string">'event'</span>;
+
+    <span class="comment">/**
+     * 数据表主键
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$pk</span>       = <span class="string">'id'</span>;
+}</code></pre></div><p><br></p>
+<h3 id="6-3-3-实体属性">6.3.3 实体属性</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 数据源组件标识id(全局唯一，此标识可以决定当前使用什么类型的数据库)
+ */</span>
+<span class="keyword">public</span> <span class="variable">$dsId</span>        = <span class="string">'mysql'</span>;
+
+<span class="comment">/**
+ * 数据库对象（对应数据源组件标识的数据库对象）
+ */</span>
+<span class="keyword">public</span> <span class="variable">$db</span>          = <span class="keyword">null</span>;
+
+<span class="comment">/**
+ * 数据表标识(全局唯一，其值与表名有关系，假定表名为：t_user_group，则值为 userGroup, 不带表前缀 t_，驼峰命名)
+ */</span>
+<span class="keyword">public</span> <span class="variable">$tableKey</span>    = <span class="keyword">null</span>;
+
+<span class="comment">/**
+ * 数据表主键（自动增长的id）
+ */</span>
+<span class="keyword">public</span> <span class="variable">$pk</span>          = <span class="string">'id'</span>;
+
+<span class="comment">/**
+* 调试开关（开启时会记录数据库的执行日志）
+*/</span>
+<span class="keyword">public</span> <span class="variable">$debug</span>       = <span class="keyword">false</span>;</code></pre></div><p>描述：上述属性在数据实体基类 Entity 中定义</p>
+<p><br></p>
+<h3 id="6-3-4-实体接口">6.3.4 实体接口</h3><p><br>
+接口代码定义</p>
+<div class="highlight"><pre><code class="php">
+/**
+ +------------------------------------------------------------------------------
+ * Spring框架 数据实体层接口(ORM核心)
+ +------------------------------------------------------------------------------
+ * @mobile    13183857698
+ * @qq        78252859
+ * @author  void &lt;lkf5_303@163.com&gt;
+ * @version 3.0
+ +------------------------------------------------------------------------------
+ */
+interface IEntity
+{
+    /**
+     * 设置表切片
+     *
+     * @access    public
+     * @param    int        $slice    设置表切片(分表标识)
+     */
+    public function slice($slice);
+
+    /**
+     * 得到结构信息
+     *
+     * @access    public
+     * @return    array
+     */
+    public function struct();
+
+    /**
+     * 得到指定ID的数据(主键查询)
+     *
+     * @access    public
+     * @param    int        $id        主键id
+     * @param    string    $col    字段名称[只支持一个字段]
+     * @return    mixed(array|string|int|float)
+     */
+    public function findOne($id, $col = '');
+
+    /**
+     * 获取多条数据
+     *
+     * @access    public
+     * @param    array    $rule  数据查询规则
+     * @return    array
+     */
+    public function find($rule);
+
+    /**
+     * 获取多条数据(数据分页时用)
+     *
+     * @access    public
+     * @param    array    $rule    数据查询规则
+     * @return    array
+     */
+    public function findAll($rule);
+
+    /**
+     * 按条件统计数据
+     *
+     * @access    public
+     * @param    array    $rule    数据查询规则
+     * @return    int
+     */
+    public function count($rule);
+
+    /**
+     * 创建一条数据
+     *
+     * @access    public
+     * @param    array    $data  数据信息[键值对]
+     * @return    int     0失败、大于0成功
+     */
+    public function create($data);
+
+    /**
+     * 修改数据
+     *
+     * @access    public
+     * @param    array    $data    被修改的数据[键值对]
+     * @param    array    $rule    数据修改规则
+     * @return    bool
+     */
+    public function modify($data, $rule);
+
+    /**
+     * 删除数据 
+     *
+     * @param    array    $rule    数据删除规则
+     * @access    public
+     * @return    bool
+     */
+    public function remove($rule);
+
+    /**
+     * 开始事务
+     *
+     * @access    public
+     * @return    bool
+     */
+    public function begin();
+
+    /**
+     * 提交事务
+     *
+     * @access    public
+     * @return    bool
+     */
+    public function commit();
+
+    /**
+     * 回滚事务
+     *
+     * @access    public
+     * @return    bool
+     */
+    public function rollBack();
+}</code></pre></div><p>描述：该接口由数据实体基类 Entity 实现</p>
+<p><br></p>
+<h3 id="6-3-5-实体与数据表">6.3.5 实体与数据表</h3><p><br>
+每个数据实体关联一张数据表，它们之间的关联是通过数据实体的属性 $tableKey 的值进行关联的，
+$tableKey 的值是数据库路由表的一个节点名称，节点名称在整个路由表中是全局唯一的，节点名称
+的驼峰命名就是数据实体不带后缀 Api 的名称，示例如：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 对应数据实体类：FlowApi     
+ * 对应类文件为：flow.api.php        
+ * 对应数据表：prefix_flow
+ */</span>
+<span class="keyword">public</span> <span class="variable">$tableKey</span> = <span class="string">'flow'</span>;        
+
+<span class="comment">/**
+ * 对应数据实体类：FlowNodeApi     
+ * 对应类文件为：flownode.api.php        
+ * 对应数据表：prefix_flow_node
+ */</span>
+<span class="keyword">public</span> <span class="variable">$tableKey</span> = <span class="string">'flowNode'</span>;
+
+<span class="comment">/**
+ * 对应数据实体类：FlowNodeMapApi     
+ * 对应类文件为：flownodemap.api.php        
+ * 对应数据表：prefix_flow_node_map
+ */</span>
+<span class="keyword">public</span> <span class="variable">$tableKey</span> = <span class="string">'flowNodeMap'</span>;</code></pre></div><p><br></p>
+<h3 id="6-3-6-命名约定">6.3.6 命名约定</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、实体类名采用帕斯卡命名（首字母大写），如：EventApi    UserOrderApi
+<span class="number">2</span>、文件名采用 xxx.api.php 的小写形式，如：user.api.php    userorder.api.php
+<span class="number">3</span>、文件位于 App/Entity 目录下</code></pre></div><p><br><br><br></p>
+<h2 id="6-4-实体语法规则">6.4 实体语法规则</h2><hr>
+<p>为了在多种数据库之间进行切换，Spring 数据实体访问数据库时，采用了自己的一套内部语法规则，下面是内部规则与SQL的转换（MYSQL）。</p>
+<p><br></p>
+<h3 id="6-4-1-等号规则">6.4.1 等号规则</h3><div class="highlight"><pre><code class="php">
+eq        =
+<span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="variable">$userId</span>, <span class="string">'level'</span> =&gt; <span class="variable">$level</span>);
+<span class="variable">$where</span>   = <span class="string">"`userId`='$userId' and `level`='$level'"</span>;</code></pre></div><h3 id="6-4-2-包含规则">6.4.2 包含规则</h3><div class="highlight"><pre><code class="php">
+in        in
+<span class="variable">$r</span>[<span class="string">'in'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="keyword">array</span>(<span class="number">1</span>,<span class="number">5</span>,<span class="number">9</span>));
+<span class="variable">$where</span>   = <span class="string">"`userId` in ('1','5','9')"</span>;</code></pre></div><h3 id="6-4-3-不包含规则">6.4.3 不包含规则</h3><div class="highlight"><pre><code class="php">
+notIn        not in、&lt;&gt;
+<span class="variable">$r</span>[<span class="string">'notIn'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="keyword">array</span>(<span class="number">1</span>,<span class="number">5</span>,<span class="number">9</span>));
+<span class="variable">$where</span>      = <span class="string">"`userId` not in ('1','5','9')"</span>;
+
+<span class="variable">$r</span>[<span class="string">'notIn'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="keyword">array</span>(<span class="number">100</span>));
+<span class="variable">$where</span>      = <span class="string">"`userId`&lt;&gt;'100'"</span>;</code></pre></div><h3 id="6-4-4-区间规则">6.4.4 区间规则</h3><div class="highlight"><pre><code class="php">
+scope        &gt;= <span class="keyword">and</span> &lt;=
+<span class="variable">$r</span>[<span class="string">'scope'</span>] = <span class="keyword">array</span>(<span class="string">'level'</span> =&gt; <span class="keyword">array</span>(<span class="number">5</span>, <span class="number">12</span>));
+<span class="variable">$where</span>      = <span class="string">"`level`&gt;='5' and `level`&lt;='12'"</span>;
+<span class="comment">//如果不需要 "="，可以对上、下限进行适当的加减就可符合这个查询规则</span></code></pre></div><h3 id="6-4-5-模糊左匹配">6.4.5 模糊左匹配</h3><div class="highlight"><pre><code class="php">
+lLike        like
+<span class="variable">$r</span>[<span class="string">'lLike'</span>] = <span class="keyword">array</span>(<span class="string">'name'</span> =&gt; <span class="string">'超凡'</span>, <span class="string">'mobile'</span> =&gt; <span class="string">'158'</span>);
+<span class="variable">$where</span>      = <span class="string">"`name` like '超凡%' and `mobile` like '158%'"</span>;</code></pre></div><h3 id="6-4-6-模糊全匹配">6.4.6 模糊全匹配</h3><div class="highlight"><pre><code class="php">
+like        like
+<span class="variable">$r</span>[<span class="string">'like'</span>] = <span class="keyword">array</span>(<span class="string">'name'</span> =&gt; <span class="string">'超凡'</span>, <span class="string">'mobile'</span> =&gt; <span class="string">'158'</span>);
+<span class="variable">$where</span>     = <span class="string">"`name` like '%超凡%' and `mobile` like '%158%'"</span>;</code></pre></div><h3 id="6-4-7-模糊右匹配">6.4.7 模糊右匹配</h3><div class="highlight"><pre><code class="php">
+rLike        like
+<span class="variable">$r</span>[<span class="string">'rLike'</span>] = <span class="keyword">array</span>(<span class="string">'name'</span> =&gt; <span class="string">'超凡'</span>, <span class="string">'mobile'</span> =&gt; <span class="string">'158'</span>);
+<span class="variable">$where</span>      = <span class="string">"`name` like '%超凡' and `mobile` like '%158'"</span>;</code></pre></div><h3 id="6-4-8-全文检索">6.4.8 全文检索</h3><div class="highlight"><pre><code class="php">
+ft        MATCH() AGAINST ()
+<span class="variable">$r</span>[<span class="string">'ft'</span>]   = <span class="keyword">array</span>(<span class="string">'tag'</span> =&gt; <span class="variable">$tag</span>);
+<span class="variable">$where</span>     = <span class="string">"MATCH(`tag`) AGAINST ('$tag')"</span>;</code></pre></div><h3 id="6-4-9-原始规则">6.4.9 原始规则</h3><div class="highlight"><pre><code class="php">
+raw        sql任意查询条件组合（不推荐使用，特殊情况例外）
+<span class="variable">$r</span>[<span class="string">'raw'</span>] = <span class="string">"classId&lt;&gt;2 and price &lt; 10.50"</span>;
+<span class="variable">$where</span>    = <span class="string">"classId&lt;&gt;2 and price &lt; 10.50"</span>;</code></pre></div><h3 id="6-4-10-排序规则">6.4.10 排序规则</h3><div class="highlight"><pre><code class="php">
+order        order by
+<span class="variable">$r</span>[<span class="string">'order'</span>] = <span class="keyword">array</span>(<span class="string">'price'</span> =&gt; <span class="string">'desc'</span>, <span class="string">'created'</span> =&gt; <span class="string">'asc'</span>);
+<span class="variable">$order</span>      = <span class="string">"order by `price` desc, `created` asc"</span>;</code></pre></div><h3 id="6-4-11-分组规则">6.4.11 分组规则</h3><div class="highlight"><pre><code class="php">
+group        group by
+<span class="variable">$r</span>[<span class="string">'group'</span>] = <span class="keyword">array</span>(<span class="string">'classId'</span> =&gt; <span class="string">'asc'</span>);
+<span class="variable">$group</span>      = <span class="string">"group by `classId` asc"</span>;</code></pre></div><h3 id="6-4-12-取列规则">6.4.12 取列规则</h3><div class="highlight"><pre><code class="php">
+col        fields
+<span class="variable">$r</span>[<span class="string">'col'</span>]   = <span class="keyword">array</span>(<span class="string">'id'</span>);
+<span class="variable">$sql</span>        = <span class="string">"select id from table"</span>;
+
+<span class="variable">$r</span>[<span class="string">'col'</span>]   = <span class="keyword">array</span>(<span class="string">'id'</span>, <span class="string">'name'</span>, <span class="string">'sex'</span>);
+<span class="variable">$sql</span>        = <span class="string">"select id,name,sex from table"</span>;
+
+<span class="variable">$r</span>[<span class="string">'col'</span>]   = <span class="keyword">array</span>(<span class="string">'count(price) as countPrice'</span>);
+<span class="variable">$sql</span>        = <span class="string">"select count(price) as countPrice from table"</span>;
+<span class="comment">//没有设置 $r['col'] 则为查询所有字段,即 *</span></code></pre></div><h3 id="6-4-13-取n条数据">6.4.13 取n条数据</h3><div class="highlight"><pre><code class="php">
+limit        limit n
+<span class="variable">$r</span>[<span class="string">'limit'</span>] = <span class="number">15</span>;
+<span class="variable">$offset</span>     = <span class="string">"limit 15"</span>;</code></pre></div><h3 id="6-4-14-按位置获取">6.4.14 按位置获取</h3><div class="highlight"><pre><code class="php">
+index        limit m,n
+<span class="variable">$r</span>[<span class="string">'index'</span>] = <span class="keyword">array</span>(<span class="number">100</span>, <span class="number">20</span>);
+<span class="variable">$offset</span>     = <span class="string">"limit 100,20"</span>;</code></pre></div><p>描述：limit默认为 1，当limit和index规则同时存在时，limit规则无效，以上规则可以任意组合使用。</p>
+<h2 id="6-5-使用数据实体">6.5 使用数据实体</h2><hr>
+<p><br></p>
+<h4 id="使用约束">使用约束</h4><p><br>
+数据实体不能直接在应用中使用，它的外部接口封装在模型基类 Model.php 之中，只能在模型中使用。</p>
+<h3 id="6-5-1-新增数据">6.5.1 新增数据</h3><div class="highlight"><pre><code class="php">
+<span class="comment">//数据库SQL语法</span>
+<span class="variable">$sql</span> = <span class="string">"insert into t_event(`userId`,`content`,`tagIds`,`attachment`,`doTime`,`created`) values('2','xxx','2','','1444665600','1444703673')"</span>;
+
+<span class="comment">//数据实体内部语法</span>
+<span class="variable">$record</span> = <span class="keyword">array</span>(
+    <span class="string">'userId'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'userId'</span>],
+    <span class="string">'content'</span>    =&gt; <span class="variable">$data</span>[<span class="string">'content'</span>],
+    <span class="string">'tagIds'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'tagIds'</span>],
+    <span class="string">'attachment'</span> =&gt; <span class="variable">$data</span>[<span class="string">'attachment'</span>],
+    <span class="string">'doTime'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'doTime'</span>],
+    <span class="string">'created'</span>    =&gt; time(),
+    );    
+<span class="variable">$id</span> = <span class="variable">$this</span>-&gt;create(<span class="variable">$record</span>);    <span class="comment">//如果数据表设置了自动增长id, 操作成功返回自动增长id，失败返回 0；如果数据表没有设置自动增长id, 操作成功返回 1，失败返回 0。</span></code></pre></div><h3 id="6-5-2-删除数据">6.5.2 删除数据</h3><div class="highlight"><pre><code class="php">
+<span class="comment">//数据库SQL语法</span>
+<span class="variable">$sql</span> = <span class="string">"delete from t_event where ( `userId`='2' and `id`='831' )"</span>;
+
+<span class="comment">//数据实体内部语法</span>
+<span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="variable">$userId</span>, <span class="string">'id'</span> =&gt; <span class="variable">$id</span>);
+<span class="variable">$bool</span>    = <span class="variable">$this</span>-&gt;remove(<span class="variable">$r</span>);    <span class="comment">//成功返回 true ,失败返回 false .</span></code></pre></div><h3 id="6-5-3-修改数据（普通）">6.5.3 修改数据（普通）</h3><div class="highlight"><pre><code class="php">
+<span class="comment">//数据库SQL语法</span>
+<span class="variable">$sql</span> = <span class="string">"update t_event set `content`='9999',`tagIds`='2',`attachment`='',`doTime`='1441814400',`updated`='1444704701' where ( `userId`='2' and `id`='832' )"</span>;
+
+<span class="comment">//数据实体内部语法</span>
+<span class="variable">$record</span> = <span class="keyword">array</span>(
+    <span class="string">'content'</span>    =&gt; <span class="variable">$data</span>[<span class="string">'content'</span>],
+    <span class="string">'tagIds'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'tagIds'</span>],
+    <span class="string">'attachment'</span> =&gt; <span class="variable">$data</span>[<span class="string">'attachment'</span>],
+    <span class="string">'doTime'</span>     =&gt; <span class="variable">$data</span>[<span class="string">'doTime'</span>],
+    <span class="string">'updated'</span>    =&gt; time(),
+    );
+<span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="string">'userId'</span> =&gt; <span class="variable">$data</span>[<span class="string">'userId'</span>], <span class="string">'id'</span> =&gt; <span class="variable">$data</span>[<span class="string">'id'</span>]);
+<span class="variable">$bool</span>    = <span class="variable">$this</span>-&gt;modify(<span class="variable">$record</span>, <span class="variable">$r</span>);    <span class="comment">//成功返回 true ,失败返回 false .</span></code></pre></div><h3 id="6-5-4-修改数据（累加）">6.5.4 修改数据（累加）</h3><div class="highlight"><pre><code class="php">
+<span class="comment">//数据库SQL语法</span>
+<span class="variable">$sql</span> = <span class="string">"update t_article set `times`=times+1,`updated`='1433211309' where ( `id`='100' )"</span>;
+
+<span class="comment">//数据实体内部语法</span>
+<span class="variable">$record</span> = <span class="keyword">array</span>(
+    <span class="string">'times'</span>    =&gt; <span class="keyword">array</span>(<span class="string">'times'</span>, <span class="number">1</span>),
+    <span class="string">'updated'</span>  =&gt; time(),
+    );
+<span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="string">'id'</span> =&gt; <span class="variable">$id</span>);
+<span class="variable">$bool</span>    = <span class="variable">$this</span>-&gt;modify(<span class="variable">$record</span>, <span class="variable">$r</span>);    <span class="comment">//成功返回 true ,失败返回 false .</span></code></pre></div><h3 id="6-5-5-查询数据（单条）">6.5.5 查询数据（单条）</h3><div class="highlight"><pre><code class="php">
+<span class="comment">//数据库SQL语法</span>
+<span class="variable">$sql</span> = <span class="string">"select * from t_user where ( `id`='2' ) limit 1"</span>;
+
+<span class="comment">//数据实体内部语法</span>
+<span class="variable">$r</span>[<span class="string">'eq'</span>]    = <span class="keyword">array</span>(<span class="string">'id'</span> =&gt; <span class="variable">$id</span>);
+<span class="variable">$r</span>[<span class="string">'limit'</span>] = <span class="number">1</span>;        <span class="comment">//限制数据条数</span>
+<span class="variable">$data</span>       = <span class="variable">$this</span>-&gt;find(<span class="variable">$r</span>);    <span class="comment">//返回一维数组 </span>
+
+<span class="comment">//id是数据库主键可使用下面的语句代替</span>
+<span class="variable">$data</span> = <span class="variable">$this</span>-&gt;get(<span class="variable">$id</span>);    <span class="comment">//返回一维数组</span>
+
+<span class="comment">//获取单列值</span>
+<span class="variable">$col</span>  = <span class="variable">$this</span>-&gt;get(<span class="variable">$id</span>, <span class="string">'name'</span>);    <span class="comment">//name为数据表字段，返回字符串</span></code></pre></div><h3 id="6-5-6-查询数据（多条）">6.5.6 查询数据（多条）</h3><div class="highlight"><pre><code class="php">
+<span class="comment">//数据库SQL语法</span>
+<span class="variable">$sql</span> = <span class="string">"select `id` from t_team where 1 order by `id` asc limit 10"</span>;
+
+<span class="comment">//数据实体内部语法</span>
+<span class="variable">$r</span>[<span class="string">'col'</span>]   = <span class="keyword">array</span>(<span class="string">'id'</span>);        <span class="comment">//获取 id 列，多列用 array('字段1', '字段2', '字段3')</span>
+<span class="variable">$r</span>[<span class="string">'order'</span>] = <span class="keyword">array</span>(<span class="string">'id'</span> =&gt; <span class="string">'asc'</span>);    <span class="comment">//按id升序，降序为 desc</span>
+<span class="variable">$r</span>[<span class="string">'limit'</span>] = <span class="variable">$num</span>;            <span class="comment">//限制数据条数</span>
+<span class="variable">$list</span>       = <span class="variable">$this</span>-&gt;find(<span class="variable">$r</span>);        <span class="comment">//返回二维数组</span></code></pre></div><h3 id="6-5-7-查询数据（分页）">6.5.7 查询数据（分页）</h3><div class="highlight"><pre><code class="php">
+<span class="comment">//数据库SQL语法</span>
+<span class="variable">$sql</span> = <span class="string">"select * from t_user where ( `teamId`='1' ) order by `positionId` desc  limit 10,10"</span>;
+<span class="variable">$sql</span> = <span class="string">"select count(*) as total from t_user where ( `teamId`='1' )"</span>;
+
+<span class="comment">//数据实体内部语法</span>
+<span class="variable">$r</span>[<span class="string">'eq'</span>]    = <span class="keyword">array</span>(<span class="string">'teamId'</span> =&gt; <span class="variable">$teamId</span>);
+<span class="variable">$r</span>[<span class="string">'order'</span>] = <span class="keyword">array</span>(<span class="string">'positionId'</span> =&gt; <span class="string">'desc'</span>);
+<span class="variable">$r</span>[<span class="string">'page'</span>]  = <span class="variable">$page</span>;        <span class="comment">//当前页码    </span>
+<span class="variable">$r</span>[<span class="string">'limit'</span>] = <span class="variable">$num</span>;        <span class="comment">//一页多少条数据</span>
+<span class="variable">$data</span>       = <span class="variable">$this</span>-&gt;findAll(<span class="variable">$r</span>); <span class="comment">//$data['total'] 符合条件的总数据条数，$data['rows'] 数据记录列表</span></code></pre></div><p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="7-1-页面视图定义">7.1 页面视图定义</h2><hr>
+<p><br></p>
+<h3 id="7-1-1-功能说明">7.1.1 功能说明</h3><p><br>
+页面视图是一个 html 模板文件，用于处理页面的展示逻辑，页面中的变量是通过控制器的操作方法设置进来的。页面视</p>
+<p>图中采用原生态的 php 语法，这样更加灵活、方便、快捷，不需要向其它模板引擎那样做复杂的语法解析，性能也可得到保障。</p>
+<p><br></p>
+<h3 id="7-1-2-命名约定">7.1.2 命名约定</h3><div class="highlight"><pre><code class="php">
+<span class="number">1</span>、文件名采用 xxx1.xxx2.html 的小写形式，xxx1 为控制器类名不带后缀 Action，xxx2 为操作方法名 
+<span class="number">2</span>、文件位于 App/View 目录下的子目录，子目录名为控制器类名不带后缀 Action 的小写形式。</code></pre></div><p><br><br><br></p>
+<h3 id="7-1-3-视图文件代码">7.1.3 视图文件代码</h3><p><br></p>
+<p>user.index.html 页面视图文件示例代码如下：</p>
+<div class="highlight"><pre><code class="php">
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8&gt;"&gt;
+&lt;title&gt;用户管理&lt;/title&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /&gt;
+&lt;link href="&lt;?=StaticDir?&gt;css/system.css" rel="stylesheet" type="text/css"&gt;
+&lt;/head&gt;
+&lt;body &gt;
+
+&lt;table cellpadding="0" cellspacing="1" class="table_list"&gt;
+    &lt;caption&gt;用户管理&lt;/caption&gt;
+    &lt;tr &gt;
+        &lt;td colspan="7"&gt;&amp;nbsp;&amp;nbsp;
+        &lt;? if($teamId!=0) {?&gt;
+        &lt;a href="/user/"&gt;全部&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;?}else{?&gt;
+        &lt;strong&gt;全部&lt;/strong&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;?}?&gt;
+        &lt;?foreach($teams as $team){?&gt;
+        &lt;?if($team['id']==$teamId){?&gt;
+         &lt;strong&gt;&lt;?=$team['name']?&gt;&lt;/strong&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+         &lt;?}else{?&gt;
+        &lt;a href="/user/?teamId=&lt;?=$team['id']?&gt;"&gt;&lt;?=$team['name']?&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;?}}?&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th width="5%"&gt;用户ID&lt;/th&gt;
+        &lt;th width="15%"&gt;账户&lt;/th&gt;
+        &lt;th width="15%"&gt;姓名&lt;/th&gt;
+        &lt;th width="15%"&gt;行政组&lt;/th&gt;
+        &lt;th width="15%"&gt;职位&lt;/th&gt;
+        &lt;th&gt;管理操作&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;?foreach($list as $data){?&gt;
+    &lt;tr &gt;
+        &lt;td class="align_c"&gt;&lt;?=$data['id']?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;a href="/user/edit/?userId=&lt;?=$data['id']?&gt;"&gt;&lt;?=$data['account']?&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;a href="/user/edit/?userId=&lt;?=$data['id']?&gt;"&gt;&lt;?=$data['name']?&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?=$data['teamName']?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?=$data['positionName']?&gt;&lt;/td&gt;
+        &lt;td class="align_c"&gt;
+        &lt;a href="/event/?userId=&lt;?=$data['id']?&gt;"&gt;工作日志&lt;/a&gt; | 
+        &lt;a href="/user/edit/?userId=&lt;?=$data['id']?&gt;"&gt;修改资料&lt;/a&gt; | 
+        &lt;a href="/user/resetPwd/?userId=&lt;?=$data['id']?&gt;"&gt;重置密码&lt;/a&gt; | 
+        &lt;a href="/user/delete/?userId=&lt;?=$data['id']?&gt;" onclick="return confirm('你是要删除吗');"&gt;删除账户&lt;/a&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;?}?&gt;
+&lt;/table&gt;
+&lt;div class="button_box"&gt;
+&lt;input type="button" name="btnAdd" value=" 添加账户 " class="button_style" onClick="location.href='/user/add/'"&gt; 
+&lt;/div&gt;
+&lt;div id="pages"&gt;
+    &lt;?=$pageBar?&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div><p>描述：视图页面中支持原生态PHP语法，包括直接使用PHP函数、应用中的工具类库</p>
+<p><br></p>
+<h2 id="7-2-使用页面视图">7.2 使用页面视图</h2><p><br></p>
+<h3 id="7-2-1-加载默认视图">7.2.1 加载默认视图</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 用户管理
+ *
+ * 用户列表、用户详情、修改密码
+ *
+ *<span class="phpdoc"> @package</span>    Action
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-10-15
+ */</span>
+<span class="class"><span class="keyword">class</span> <span class="title">UserAction</span> <span class="keyword">extends</span> <span class="title">AppAction</span>
+{</span>
+    <span class="comment">/**
+     * 用户列表
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-15
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span>
+    {</span>
+        <span class="variable">$this</span>-&gt;display(); <span class="comment">// 自动加载 App/View/user/user.index.html 并渲染</span>
+    }
+
+    <span class="comment">/**
+     * 用户详情
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-15
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">detail</span><span class="params">()</span>
+    {</span>
+        <span class="variable">$this</span>-&gt;display(); <span class="comment">// 自动加载 App/View/user/user.detail.html 并渲染</span>
+    }    
+
+    <span class="comment">/**
+     * 修改密码
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-10-15
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">changePwd</span><span class="params">()</span>
+    {</span>
+        <span class="variable">$this</span>-&gt;display(); <span class="comment">// 自动加载 App/View/user/user.changepwd.html 并渲染</span>
+    }
+}</code></pre></div><p>描述：推荐采用加载默认视图（可避免不必要的问题）</p>
+<p><br></p>
+<h3 id="7-2-2-加载指定视图">7.2.2 加载指定视图</h3><div class="highlight"><pre><code class="php">
+<span class="variable">$this</span>-&gt;display(<span class="string">'user.index.html'</span>); <span class="comment">// 加载 App/View/user.index.html 并渲染</span>
+<span class="variable">$this</span>-&gt;display(<span class="string">'user/user.index.html'</span>); <span class="comment">// 加载 App/View/user/user.index.html 并渲染</span></code></pre></div><p>描述：注意文件名及文件路径采用小写形式。</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="8-1-抽象层组件">8.1 抽象层组件</h2><hr>
+<p><br>
+为了应用扩展的需要，有时应用层需要把具有共性的程序组件抽象出来或进一步拓展框架的实现，
+因此在应用层分别对控制器（Action）、业务组件（Module）、基础模型（Model）等，进行了抽象。
+应用层的抽象基类分别是：</p>
+<div class="highlight"><pre><code class="php">
+<span class="number">1</span>、AppAction（应用控制器基类）
+<span class="number">2</span>、AppModule（应用业务组件基类）
+<span class="number">3</span>、AppModel（应用基础模型基类）</code></pre></div><p>描述：应用中相应的层都需继承各自的基类（为各层提供足够的扩展空间）</p>
+<p><br></p>
+<h3 id="8-1-1-定义appaction">8.1.1 定义AppAction</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 应用控制器基类
+ *
+ * 存放控制器公用方法
+ *
+ *<span class="phpdoc"> @package</span>    Action
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-11-06
+ */</span>
+<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AppAction</span> <span class="keyword">extends</span> <span class="title">Action</span>
+{</span>
+    <span class="comment">/**
+     * 每页显示多少行
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$rowNum</span>  = <span class="number">15</span>;
+
+
+    <span class="comment">/**
+     * 前置操作(框架自动调用)
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-11-06
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">before</span><span class="params">()</span>
+    {</span>
+        <span class="comment">//自定义业务逻辑</span>
+    }
+
+    <span class="comment">/**
+     * 后置操作(框架自动调用)
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-11-06
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">after</span><span class="params">()</span>
+    {</span>
+        <span class="comment">//自定义业务逻辑</span>
+    }
+}</code></pre></div><p>描述：上述代码的内容根据应用的需要自行调整，文件位于 App/Action/app.action.php。</p>
+<p><br></p>
+<h3 id="8-1-2-定义appmodule">8.1.2 定义AppModule</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 应用业务组件基类
+ *
+ * 存放业务组件公用方法
+ * 
+ *<span class="phpdoc"> @package</span>    Module
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-11-06
+ */</span>
+<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> <span class="keyword">extends</span> <span class="title">Module</span>
+{</span>
+    <span class="comment">//可在此定义业务组件的公用方法</span>
+}</code></pre></div><p>描述：上述代码的内容根据应用的需要自行调整，文件位于 App/Module/app.module.php。</p>
+<p><br></p>
+<h3 id="8-1-3-定义appmodel">8.1.3 定义AppModel</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 应用基础模型基类
+ *
+ * 存放基础模型公用方法
+ * 
+ *<span class="phpdoc"> @package</span>    Model
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-11-06
+ */</span>
+<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModel</span> <span class="keyword">extends</span> <span class="title">Model</span>
+{</span>
+    <span class="comment">/**
+     * sql调试开关
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$debug</span>     = <span class="keyword">true</span>;
+
+    <span class="comment">/**
+     * 查询字段
+     */</span>
+    <span class="keyword">protected</span> <span class="variable">$fields</span> = <span class="keyword">array</span>(
+        <span class="string">'1'</span> =&gt; <span class="string">'id'</span>,
+        );
+
+    <span class="comment">/**
+     * 初始化(构造模型时自动执行)
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-11-06
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">init</span><span class="params">()</span>
+    {</span>
+    }
+
+    <span class="comment">/**
+     * 通过主键id获取信息(1条数据)
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-11-06
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    int        $id        主键id
+     *<span class="phpdoc"> @param</span>    string    $field    字段名(只支持一个)
+     *<span class="phpdoc"> @return</span>    mixed   array|string
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span><span class="params">(<span class="variable">$id</span>, <span class="variable">$field</span> = <span class="string">''</span>)</span>
+    {</span>
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;findOne(<span class="variable">$id</span>, <span class="variable">$field</span>);
+    }
+
+    <span class="comment">/**
+     * 通过字段名获取信息(1条数据)
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-11-06
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>    int        $key    字段key
+     *<span class="phpdoc"> @param</span>    string    $value    字段值
+     *<span class="phpdoc"> @return</span>    array
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getByField</span><span class="params">(<span class="variable">$key</span>, <span class="variable">$value</span>)</span>
+    {</span>
+        <span class="variable">$field</span>   = <span class="variable">$this</span>-&gt;fields[<span class="variable">$key</span>];
+        <span class="variable">$r</span>[<span class="string">'eq'</span>] = <span class="keyword">array</span>(<span class="variable">$field</span> =&gt; <span class="variable">$value</span>);
+
+        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;find(<span class="variable">$r</span>);
+    }
+}</code></pre></div><p>描述：上述代码的内容根据应用的需要自行调整，文件位于 App/Model/app.model.php。</p>
+<p><br></p>
+<h3 id="8-1-4-定义appform">8.1.4 定义AppForm</h3><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 应用表单组件基类
+ *
+ * 表单数据收集、输出提示信息
+ *
+ *<span class="phpdoc"> @package</span>    Form
+ *<span class="phpdoc"> @author</span>    void
+ *<span class="phpdoc"> @since</span>    2015-11-06
+ */</span>
+<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AppForm</span> <span class="keyword">extends</span> <span class="title">Form</span>
+{</span>
+    <span class="comment">/**
+     * 错误输出格式[0消息框提示、1json格式提示]
+     */</span>
+    <span class="keyword">protected</span> <span class="variable">$format</span> = <span class="number">1</span>;
+
+    <span class="comment">/**
+     * 验证规则
+     */</span>
+    <span class="keyword">protected</span> <span class="variable">$rules</span> = <span class="keyword">array</span>(
+        <span class="string">'require'</span>  =&gt;  <span class="string">'/.+/'</span>,
+        <span class="string">'email'</span>    =&gt;  <span class="string">'/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/'</span>,
+        <span class="string">'currency'</span> =&gt;  <span class="string">'/^\d+(\.\d+)?$/'</span>,
+        <span class="string">'number'</span>   =&gt;  <span class="string">'/^\d+$/'</span>,
+        <span class="string">'zip'</span>      =&gt;  <span class="string">'/^\d{6}$/'</span>,
+        <span class="string">'int'</span>       =&gt;  <span class="string">'/^[-\+]?\d+$/'</span>,
+        <span class="string">'float'</span>    =&gt;  <span class="string">'/^[-\+]?\d+(\.\d+)$/'</span>,
+        <span class="string">'english'</span>  =&gt;  <span class="string">'/^[A-Za-z]+$/'</span>,
+        );
+
+    <span class="comment">/**
+     * 中断并输出提示信息
+     *<span class="phpdoc"> @author</span>    void
+     *<span class="phpdoc"> @since</span>    2015-11-06
+     *
+     *<span class="phpdoc"> @access</span>    public
+     *<span class="phpdoc"> @param</span>   mixed    $error 提示信息
+     *<span class="phpdoc"> @return</span>    void
+     */</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">stop</span><span class="params">(<span class="variable">$error</span> = <span class="string">'error'</span>)</span>
+    {</span>
+        output(<span class="number">0</span>, <span class="variable">$error</span>, <span class="keyword">array</span>());
+        <span class="keyword">exit</span>;
+    }
+}</code></pre></div><p>描述：上述代码的内容根据应用的需要自行调整，文件位于 App/Form/app.form.php。</p>
+<p><br></p>
+<h3 id="8-1-5-加载组件">8.1.5 加载组件</h3><p><br>
+抽象层组件都是采用OOP编写的，因此可以采用类的自动加载，详见类的自动加载章节。</p>
+<p><br></p>
+<h2 id="8-2-工具类组件">8.2 工具类组件</h2><hr>
+<p><br>
+框架提供的工具类组件有限，应用开发中，开发者可以为应用开发自己的工具类组件或使用第三方开源组件。</p>
+<p><br></p>
+<h3 id="8-2-1-存放位置">8.2.1 存放位置</h3><p><br>
+为了便于管理，应用工具类组件统一存放在 App/Util 目录下，组件较多时可以建子目录进行分类管理。</p>
+<p><br></p>
+<h3 id="8-2-2-加载组件">8.2.2 加载组件</h3><p><br></p>
+<h4 id="函数组件">函数组件</h4><p>函数组件可直接放在 App/Util/app.function.php 文件中,也可单独新建代码文件，在 App/Util/import.php 文件中引入（注意组件之间的冲突）。</p>
+<p><br></p>
+<h4 id="oop组件">OOP组件</h4><p>OOP组件可以采用类的自动加载（配置 Config/Extension/classmap.config ），提升程序性能。</p>
+<p><br></p>
+<h4 id="描述：注意文件路径及文件大小写。">描述：注意文件路径及文件大小写。</h4><p><br></p>
+<h3 id="8-2-3-使用组件">8.2.3 使用组件</h3><p><br>
+工具类组件是全局性的，可以在应用代码的各个层访问组件接口，完成组件实现的功能。</p>
+<p><br></p>
+<h2 id="8-3-自动加载">8.3 自动加载</h2><hr>
+<p><br>
+为了提升程序的性能，减少磁盘IO开销，尽量在组件使用的时候才加载该组件，对于应用中的OOP组件，Spring采用了类的自动加载。</p>
+<h3 id="8-3-1-类的自动加载">8.3.1 类的自动加载</h3><p><br>
+应用开发中有时需要用到类的自动加载（仅在使用时才加载类代码），可以通过配置 Config/Extension/classmap.config 
+来实现，示例如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="comment">//应用自动加载的类</span>
+<span class="keyword">return</span> <span class="keyword">array</span>(
+    <span class="string">'Bi'</span>        =&gt; BiDir.<span class="string">'/bi.php'</span>,
+    <span class="string">'AppForm'</span>   =&gt; FormDir.<span class="string">'/app.form.php'</span>,
+    <span class="string">'AppAction'</span> =&gt; ActionDir.<span class="string">'/app.action.php'</span>,
+    <span class="string">'AppModel'</span>  =&gt; ModelDir.<span class="string">'/app.model.php'</span>,
+    <span class="string">'AppModule'</span> =&gt; ModuleDir.<span class="string">'/app.module.php'</span>,
+    );</code></pre></div><p>描述：键为类名（区分大小写），值为类文件的存放位置（区分大小写）。</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="9-1-组件分类">9.1 组件分类</h2><hr>
+<p><br></p>
+<h3 id="9-1-1-静态组件">9.1.1 静态组件</h3><p><br></p>
+<p><br></p>
+<h3 id="9-1-2-动态组件">9.1.2 动态组件</h3><p><br></p>
+<h2 id="9-2-组件配置">9.2 组件配置</h2><hr>
+<p><br></p>
+<h3 id="9-2-1-静态组件配置">9.2.1 静态组件配置</h3><p><br></p>
+<h3 id="9-2-2-动态组件配置">9.2.2 动态组件配置</h3><p><br></p>
+<h2 id="9-3-组件介绍">9.3 组件介绍</h2><hr>
+<p><br></p>
+<h3 id="9-3-1-日志组件">9.3.1 日志组件</h3><p><br></p>
+<h4 id="接口定义">接口定义</h4><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 日志记录
+ *
+ *<span class="phpdoc"> @param</span>    mixed    $content    日志内容（任意类型）
+ *<span class="phpdoc"> @param</span>    string  $file        日志文件名
+ *<span class="phpdoc"> @param</span>    string    $dir        日志存放目录（为空存放于Resource/Log）
+ *<span class="phpdoc"> @return</span>    void
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">write</span><span class="params">(<span class="variable">$content</span>, <span class="variable">$file</span> = <span class="string">'log.log'</span>, <span class="variable">$dir</span> = <span class="string">''</span>)</span></span></code></pre></div><h4 id="使用组件">使用组件</h4><div class="highlight"><pre><code class="php">
+<span class="comment">//日志文件存放于Resource/Log</span>
+Log::write(<span class="string">'xxx'</span>, <span class="string">'test.log'</span>);
+
+<span class="comment">//日志文件存放于Resource/Log/Debug</span>
+Log::write(<span class="string">'x1x2x3'</span>, <span class="string">'debug.log'</span>, <span class="string">'Debug'</span>);</code></pre></div><p>描述：日志记录之前，请确保目录存在，并有写入权限。</p>
+<p><br></p>
+<h3 id="9-3-2-session-组件">9.3.2 Session 组件</h3><p><br></p>
+<h3 id="9-3-3-登陆认证组件">9.3.3 登陆认证组件</h3><p><br></p>
+<h4 id="loginauth接口定义">LoginAuth接口定义</h4><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 获取认证数据
+ * 
+ *<span class="phpdoc"> @access</span>    public
+ *<span class="phpdoc"> @param</span>    string    $key    键
+ *<span class="phpdoc"> @return</span>    mixed(string|array)
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span><span class="params">(<span class="variable">$key</span>)</span>;</span></code></pre></div><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 设置认证数据
+ * 
+ *<span class="phpdoc"> @access</span>    public
+ *<span class="phpdoc"> @param</span>    array    $user    认证数据(键值对)
+ *<span class="phpdoc"> @param</span>    int        $expire    过期时间(秒)
+ *<span class="phpdoc"> @return</span>    void
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">set</span><span class="params">(<span class="variable">$user</span>, <span class="variable">$expire</span> = <span class="number">600</span>)</span>;</span></code></pre></div><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 更新认证数据
+ * 
+ *<span class="phpdoc"> @access</span>    public
+ *<span class="phpdoc"> @param</span>    array    $user    认证数据(键值对)
+ *<span class="phpdoc"> @param</span>    int        $expire    过期时间(秒)
+ *<span class="phpdoc"> @return</span>    void
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(<span class="variable">$user</span>, <span class="variable">$expire</span> = <span class="number">600</span>)</span>;</span></code></pre></div><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 验证登录
+ * 
+ *<span class="phpdoc"> @access</span>    public
+ *<span class="phpdoc"> @return</span>    bool    
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">check</span><span class="params">()</span>;</span></code></pre></div><div class="highlight"><pre><code class="php">
+<span class="comment">/**
+ * 注销登录
+ * 
+ *<span class="phpdoc"> @access</span>    public
+ *<span class="phpdoc"> @return</span>    void
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">logout</span><span class="params">()</span>;</span></code></pre></div><h4 id="使用组件">使用组件</h4><div class="highlight"><pre><code class="php">
+<span class="comment">//设置登录信息</span>
+<span class="variable">$user</span> = <span class="keyword">array</span>(
+    <span class="string">'id'</span>       =&gt; <span class="number">1</span>,
+    <span class="string">'username'</span> =&gt; <span class="string">'void'</span>,
+    <span class="string">'nickname'</span> =&gt; <span class="string">'阿发'</span>,
+    );
+LoginAuth::set(<span class="variable">$user</span>, <span class="number">36000</span>);
+
+<span class="comment">//获取登陆信息</span>
+<span class="variable">$user</span>     = LoginAuth::get(<span class="string">'all'</span>);      <span class="comment">//获取用户信息（全部）</span>
+<span class="variable">$id</span>       = LoginAuth::get(<span class="string">'id'</span>);    <span class="comment">//获取用户id</span>
+<span class="variable">$username</span> = LoginAuth::get(<span class="string">'username'</span>); <span class="comment">//获取用户名</span>
+<span class="variable">$nickname</span> = LoginAuth::get(<span class="string">'nickname'</span>); <span class="comment">//获取用户昵称</span>
+
+<span class="comment">//检查是否登陆(true：已登陆、false：未登陆)</span>
+<span class="variable">$bool</span> = LoginAuth::check();
+
+<span class="comment">//更新登录信息</span>
+<span class="variable">$user</span> = <span class="keyword">array</span>(
+    <span class="string">'nickname'</span> =&gt; <span class="string">'发哥'</span>,
+    );
+LoginAuth::update(<span class="variable">$user</span>, <span class="number">36000</span>);
+
+<span class="comment">//退出登录</span>
+LoginAuth::logout();</code></pre></div><p><br></p>
+<h3 id="9-3-4-文件上传组件">9.3.4 文件上传组件</h3><p><br></p>
+<h3 id="9-3-5-消息队列组件">9.3.5 消息队列组件</h3><p><br></p>
+<h3 id="9-3-6-集合组件">9.3.6 集合组件</h3><p><br></p>
+<h3 id="9-3-7-哈希表组件">9.3.7 哈希表组件</h3><p><br></p>
+<h3 id="9-3-8-rpc组件">9.3.8 RPC组件</h3><p><br></p>
+<h3 id="9-3-9-sphinx组件">9.3.9 sphinx组件</h3><p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="10-1-数据库日志">10.1 数据库日志</h2><hr>
+<p><br></p>
+<h3 id="10-1-1-开启日志记录">10.1.1 开启日志记录</h3><p><br>
+为了便于对程序逻辑的跟踪、调试，有时需要记录对数据库做了哪些操作，下面的示例可以帮您开启数据库日志记录：</p>
+<div class="highlight"><pre><code class="php">
+<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModel</span> <span class="keyword">extends</span> <span class="title">Model</span>
+{</span>
+    <span class="comment">/**
+     * sql调试开关（false关闭数据库日志记录、true开启数据库日志记录）
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$debug</span>     = <span class="keyword">true</span>;
+}</code></pre></div><p>描述：上述代码位于文件 App/Model/app.model.php，同时确保 Resource/Log/Sql 目录存在并有写入权限。</p>
+<p><br></p>
+<h3 id="10-1-2-输出日志记录">10.1.2 输出日志记录</h3><p><br>
+输出数据库日志之前，必须开启数据库日志记录，在控制器中开启输出数据库日志记录示例如下：</p>
+<div class="highlight"><pre><code class="php">
+<span class="class"><span class="keyword">class</span> <span class="title">UserAction</span> <span class="keyword">extends</span> <span class="title">AppAction</span>
+{</span>
+    <span class="comment">/**
+     * 开启输出数据库日志（true开启、false关闭）
+     */</span>
+    <span class="keyword">public</span> <span class="variable">$debug</span> = <span class="keyword">true</span>;
+}</code></pre></div><p>描述：执行控制器的操作时，将会在页面视图中输出数据库执行日志。</p>
+<p><br></p>
+<h2 id="10-2-错误处理日志">10.2 错误处理日志</h2><hr>
+<p><br></p>
+<h3 id="10-2-1-错误处理日志说明">10.2.1 错误处理日志说明</h3><p><br>
+系统运行期间，程序会报出各种各样的异常、错误等信息，为了便于对问题的跟踪，Spring 对各钟
+异常、错误等信息进行了分类记录，遇到致命错误会以信息提示框的形式，把这些致命错误抛出来。
+并终止程序运行，应用可以设置钩子函数控制错误信息的抛出。错误日志记录在 Resource/Log/Error
+目录下，确保目录存在并有写入权限。</p>
+<p><br></p>
+<h3 id="10-2-2-错误信息提示框">10.2.2 错误信息提示框</h3><p><br>
+当出现致命错误时，Spring 会把这些信息用信息提示框显示出来，默认的提示框模板文件放在Resource/MessageBox 目录下，
+分别是 error.html 、halt.html（不存在就新建）；应用可以修改模板的内容以更加友好的方式呈现出来。</p>
+<p><br></p>
+<h3 id="10-2-3-改变错误信息输出">10.2.3 改变错误信息输出</h3><p><br>
+有时应用不希望以信息提示框的形式来输出错误信息（如：API接口），可以通过指定一个钩子函数来控制这种行为（调整入口文件 index.php）：</p>
+<div class="highlight"><pre><code class="php">
+Spring::<span class="variable">$hook</span> = <span class="string">'appError'</span>;            <span class="comment">//为应用设置错误处理钩子函数</span>
+Spring::run();                    <span class="comment">//启动框架</span></code></pre></div><p>描述：appError 函数可以在 App/Util/app.function.php 中定义，函数原型：function appError($msg)，内部逻辑自行定义。</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+        <article class="clearfix method">
+            <h2 id="11-1-web服务器配置">11.1 web服务器配置</h2><hr>
+<p><br></p>
+<h3 id="11-1-1-nginx配置">11.1.1 nginx配置</h3><div class="highlight"><pre><code class="php">
+server {
+        listen        <span class="number">80</span>;
+        server_name    imgsearch.chofn.api;
+
+        charset        utf-<span class="number">8</span>;
+        index        index.htm index.html  index.shtml index.php;
+        root        /data/www/imgsearch;
+
+    <span class="comment">//rewrite 规则</span>
+    location / {
+        <span class="keyword">if</span> (!-e <span class="variable">$request_filename</span>) {
+            rewrite ^/([a-zA-Z]+)/?(.*)?             /index.php?mod=$<span class="number">1</span>&amp;action=index&amp;$<span class="number">2</span> last;            
+            rewrite ^/([a-zA-Z]+)/([a-zA-Z]+)/?(.*)? /index.php?mod=$<span class="number">1</span>&amp;action=$<span class="number">2</span>&amp;$<span class="number">3</span> last;
+            <span class="keyword">break</span>;
+        }
+    }
+
+    <span class="comment">//拒绝在子目中执行PHP代码（加强安全）</span>
+    location ~* ^/(App|Config|Data|Resource|<span class="keyword">Static</span>)/.*.(php)$
+        {
+                deny all;
+        }
+
+        location ~ \.php$ {
+            root           /data/www/imgsearch;
+            fastcgi_pass   <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span>;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  /data/www/imgsearch<span class="variable">$fastcgi_script_name</span>;
+            <span class="keyword">include</span>        fastcgi_params;
+        }
+}</code></pre></div><p><br></p>
+<h3 id="11-1-2-apache配置">11.1.2 apache配置</h3><p><br></p>
+<h4 id="域名、目录设置">域名、目录设置</h4><div class="highlight"><pre><code class="php">
+&lt;VirtualHost *:<span class="number">80</span>&gt;
+ ServerName demo.chofn.cn
+ DocumentRoot <span class="string">"D:/project/SvnAdmin/patentsystem/trunk/demo"</span>
+&lt;Directory <span class="string">"D:/project/SvnAdmin/patentsystem/trunk/demo"</span>&gt; 
+ Options FollowSymLinks IncludesNOEXEC Indexes
+ DirectoryIndex index.html index.htm  index.php
+ AllowOverride All 
+ Order Deny,Allow 
+ Allow from all 
+&lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre></div><h4 id="rewrite-规则">rewrite 规则</h4><div class="highlight"><pre><code class="php">
+&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+&lt;/IfModule&gt;</code></pre></div><p><br></p>
+<h2 id="11-2-文件目录">11.2 文件目录</h2><p><br></p>
+<h3 id="11-2-1-目录权限">11.2.1 目录权限</h3><div class="highlight"><pre><code class="php">.
+├── App            读权限，子目录自动继承
+│   ├── Action        
+│   ├── Console        
+│   ├── Entity        
+│   ├── Form        
+│   ├── Hook        
+│   ├── Model        
+│   ├── Module        
+│   ├── Util        
+│   └── View        
+├── Config        读权限，子目录自动继承
+│   ├── Db        
+│   ├── Extension    
+│   ├── Other        
+│   └── Table        
+├── Data        读写权限，子目录自动继承
+├── Resource        读权限        
+│   ├── Cache        读写权限，子目自动继承
+│   ├── Log        读写权限，子目自动继承
+│   │   ├── Error    
+│   │   └── Sql        
+│   └── MessageBox    读权限，子目自动继承
+└── <span class="keyword">Static</span>        读权限，子目录自动继承
+    ├── css        
+    ├── images        
+    └── js</code></pre></div><p>描述：除了严格控制文件的读写权限外，上述目录结构中任意目录也没有PHP执行权限（谨记），严格控制
+程序目录结构的读写权限、PHP执行权限，可以极大地加强系统安全。</p>
+<p><br><br><br><br><br></p>
+
+        </article>
+    </div>
+    <!-- end container -->
+
+</div>
+<a id="gotopBtn" href="#" style="display: none;">GoTop</a>
+<script type="text/javascript">
+    var globalSettings = {
+        themes: {"purple":"static/purple.css","blue":"static/blue.css","dark":"static/dark.css","orange":"static/orange.css"},
+        activeTheme: 'purple',
+        source: []
+    };
+</script>
+<script src="static/depencies.min.js"></script>
+<script src="static/doc.js"></script>
+</body>
+</html>
